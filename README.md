@@ -12,3 +12,5 @@ These are some scripts that I use at home. Mostly related to processing images.
 - tmov.sh: Takes a bunch of files with dates in their names, an then updates
              their modification times with the `touch` command.
 - ptcb.sh: OS X bash script to convert the contents of the clipboard to plain text.
+- pingplot.sh: Use gnuplot to plot ping results. uses pingplot.plt
+- pingplot.plt: gnuplot file for use with pingplot.sh

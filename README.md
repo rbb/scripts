@@ -14,3 +14,5 @@ These are some scripts that I use at home. Mostly related to processing images.
 - ptcb.sh: OS X bash script to convert the contents of the clipboard to plain text.
 - pingplot.sh: Use gnuplot to plot ping results. uses pingplot.plt
 - pingplot.plt: gnuplot file for use with pingplot.sh
+- iwlist_csv.sh: convert the output of a `iwlist scan` command into CSV format
+- iwlist_scan.txt: an example output of `iwlist scan` output

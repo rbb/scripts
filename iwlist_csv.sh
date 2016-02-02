@@ -4,6 +4,9 @@
 # Example: cat iwlist_scan.txt | iwlist_csv.sh > iwlist_scan.csv
 # Example: iwlist scan | iwlist_csv.sh > iwlist_scan.csv
 # Example: iwlist ath0 scan | iwlist_csv.sh > iwlist_scan.csv
+#
+# based on code found at: http://ubuntuforums.org/showthread.php?t=984492
+#
 
 a=0;b=0;c=0;d=0;x=0
 

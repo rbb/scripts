@@ -1,0 +1,1584 @@
+ath0      Scan completed :
+          Cell 01 - Address: 74:85:2A:CD:7B:E0
+                    ESSID:"HOME-FCB8-2.4"
+                    Mode:Master
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=11/70  Signal level=-84 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    IE: WPA Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+                    Extra:ath_ie=dd0900037f01010000ff7f
+          Cell 02 - Address: 74:85:2A:CD:7B:E1
+                    ESSID:""
+                    Mode:Master
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=10/70  Signal level=-85 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    IE: WPA Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+                    Extra:ath_ie=dd0900037f01010000ff7f
+          Cell 03 - Address: 50:17:FF:F4:BA:D0
+                    ESSID:"IONU-2.4g"
+                    Mode:Master
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=17/70  Signal level=-78 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 6 Mb/s; 9 Mb/s
+                              11 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=102
+                    IE: WPA Version 1
+                        Group Cipher : WEP-104 
+                        Pairwise Ciphers (1) : TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101840003a4000027a4000042435e0062322f00
+          Cell 04 - Address: 5C:57:1A:AB:95:D0
+                    ESSID:"HOME-95D2"
+                    Mode:Master
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=4/70  Signal level=-91 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 9 Mb/s
+                              18 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 12 Mb/s
+                              24 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: WPA Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (1) : TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+          Cell 05 - Address: 50:67:F0:F0:50:6C
+                    ESSID:"myqwest2569"
+                    Mode:Master
+                    Frequency:2.417 GHz (Channel 2)
+                    Quality=17/70  Signal level=-78 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    IE: WPA Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+          Cell 06 - Address: 00:22:3F:01:72:56
+                    ESSID:"NETGEAR"
+                    Mode:Master
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=25/70  Signal level=-70 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    IE: WPA Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101820003a4000027a4000042435e0062322f00
+                    Extra:ath_ie=dd0900037f01010000ff7f
+          Cell 07 - Address: 40:4A:03:F4:49:1D
+                    ESSID:"QWEST1150"
+                    Mode:Master
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=6/70  Signal level=-89 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    IE: WPA Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101000003a4000027a4000042435e0062322f00
+          Cell 08 - Address: 06:18:0A:79:24:37
+                    ESSID:""
+                    Mode:Master
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=10/70  Signal level=-85 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:11 Mb/s; 6 Mb/s; 9 Mb/s; 12 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    IE: WPA Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101850003a4000027a4000042435e0062322f00
+                    Extra:ath_ie=dd0900037f01010000ff7f
+          Cell 09 - Address: C0:56:27:BE:8B:6F
+                    ESSID:"Colorado Tech Shop"
+                    Mode:Master
+                    Frequency:2.457 GHz (Channel 10)
+                    Quality=22/70  Signal level=-73 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    IE: WPA Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (1) : TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+          Cell 10 - Address: 06:18:0A:79:24:15
+                    ESSID:"Fleet"
+                    Mode:Master
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=22/70  Signal level=-73 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:11 Mb/s; 6 Mb/s; 9 Mb/s; 12 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    IE: WPA Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101850003a4000027a4000042435e0062322f00
+                    Extra:ath_ie=dd0900037f01010000ff7f
+          Cell 11 - Address: 20:25:64:AC:6A:D0
+                    ESSID:"CA_WIRELESS_2.4"
+                    Mode:Master
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=24/70  Signal level=-71 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    IE: WPA Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+                    Extra:ath_ie=dd0900037f01010000ff7f
+          Cell 12 - Address: 06:18:0A:79:24:15
+                    ESSID:""
+                    Mode:Master
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=27/70  Signal level=-68 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:11 Mb/s; 6 Mb/s; 9 Mb/s; 12 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    IE: WPA Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101850003a4000027a4000042435e0062322f00
+                    Extra:ath_ie=dd0900037f01010000ff7f
+          Cell 13 - Address: 74:85:2A:82:D9:88
+                    ESSID:"HOME-1466-2.4"
+                    Mode:Master
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=6/70  Signal level=-89 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    IE: WPA Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+                    Extra:ath_ie=dd0900037f01010000ff7f
+          Cell 14 - Address: 74:85:2A:77:3F:08
+                    ESSID:"HOME-8B78-2.4"
+                    Mode:Master
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=4/70  Signal level=-91 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    IE: WPA Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+                    Extra:ath_ie=dd0900037f01010000ff7f
+          Cell 15 - Address: C8:6C:87:F4:CF:F1
+                    ESSID:"myqwest6962"
+                    Mode:Master
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=10/70  Signal level=-85 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    IE: WPA Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101000003a4000027a4000042435e0062322f00
+          Cell 16 - Address: 10:5F:06:9B:09:B5
+                    ESSID:"AutoAuthorities"
+                    Mode:Master
+                    Frequency:2.442 GHz (Channel 7)
+                    Quality=4/70  Signal level=-91 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    IE: WPA Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+          Cell 17 - Address: C8:D7:19:0D:7A:23
+                    ESSID:"myhomenet"
+                    Mode:Master
+                    Frequency:2.447 GHz (Channel 8)
+                    Quality=4/70  Signal level=-91 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    IE: WPA Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (1) : TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+          Cell 18 - Address: 74:85:2A:77:3F:09
+                    ESSID:""
+                    Mode:Master
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=6/70  Signal level=-89 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    IE: WPA Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+                    Extra:ath_ie=dd0900037f01010000ff7f
+          Cell 19 - Address: 00:05:D5:A0:01:8C
+                    ESSID:"PSI-MSS"
+                    Mode:Master
+                    Frequency:2.442 GHz (Channel 7)
+                    Quality=3/70  Signal level=-92 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: WPA Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (1) : TKIP 
+                        Authentication Suites (1) : 802.1X  
+                    Extra:wme_ie=dd180050f2020101000003a4000027a4000042435e0062322f00
+          Cell 20 - Address: 00:02:6F:A6:ED:2D
+                    ESSID:"JMRExt"
+                    Mode:Master
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=2/70  Signal level=-93 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: WPA Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:ath_ie=dd0900037f01010020ff7f
+          Cell 21 - Address: C0:3F:0E:33:B6:0A
+                    ESSID:"RMAinc"
+                    Mode:Master
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=6/70  Signal level=-89 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    IE: WPA Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+          Cell 22 - Address: 06:18:0A:79:24:4A
+                    ESSID:""
+                    Mode:Master
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=8/70  Signal level=-87 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:11 Mb/s; 6 Mb/s; 9 Mb/s; 12 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    IE: WPA Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101850003a4000027a4000042435e0062322f00
+                    Extra:ath_ie=dd0900037f01010000ff7f
+          Cell 23 - Address: 20:AA:4B:7C:EC:9D
+                    ESSID:"cwise"
+                    Mode:Master
+                    Frequency:2.417 GHz (Channel 2)
+                    Quality=7/70  Signal level=-88 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    IE: WPA Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+          Cell 24 - Address: 48:F8:B3:D0:6F:98
+                    ESSID:"Michael'sRestaurant"
+                    Mode:Master
+                    Frequency:2.422 GHz (Channel 3)
+                    Quality=4/70  Signal level=-91 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    IE: WPA Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+          Cell 25 - Address: EE:43:F6:7B:DE:FC
+                    ESSID:""
+                    Mode:Master
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=4/70  Signal level=-91 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 9 Mb/s
+                              18 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 12 Mb/s
+                              24 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : TKIP CCMP 
+                        Authentication Suites (1) : PSK  
+                    IE: WPA Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : TKIP CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101000003a4000027a4000042435e0062322f00
+          Cell 26 - Address: C0:56:27:78:32:AA
+                    ESSID:"MedinaEspinoza"
+                    Mode:Master
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=3/70  Signal level=-92 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    IE: WPA Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (1) : TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+          Cell 27 - Address: 10:5F:06:34:E8:05
+                    ESSID:"leeniescafe0279"
+                    Mode:Master
+                    Frequency:2.452 GHz (Channel 9)
+                    Quality=1/70  Signal level=-94 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    IE: WPA Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101000003a4000027a4000042435e0062322f00
+          Cell 28 - Address: 74:85:2A:82:D9:89
+                    ESSID:""
+                    Mode:Master
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=5/70  Signal level=-90 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    IE: WPA Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+                    Extra:ath_ie=dd0900037f01010000ff7f
+          Cell 29 - Address: 88:F7:C7:2F:BC:C2
+                    ESSID:"HOME-BCC2"
+                    Mode:Master
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=6/70  Signal level=-89 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    IE: WPA Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+          Cell 30 - Address: 44:94:FC:4F:6F:81
+                    ESSID:"NETGEAR42"
+                    Mode:Master
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=35/70  Signal level=-60 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101880003a4000027a400004243bc0062326600
+          Cell 31 - Address: 00:02:6F:87:BB:C4
+                    ESSID:"Hines_Test"
+                    Mode:Master
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=24/70  Signal level=-71 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    Extra:ath_ie=dd0900037f01010004ff7f
+          Cell 32 - Address: 00:02:6F:3F:43:EB
+                    ESSID:"FCI_CERT_TEST"
+                    Mode:Master
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=23/70  Signal level=-72 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : 802.1X  
+                    Extra:ath_ie=dd0900037f01010004ff7f
+          Cell 33 - Address: 74:85:2A:CD:7B:E2
+                    ESSID:"xfinitywifi"
+                    Mode:Master
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=10/70  Signal level=-85 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+                    Extra:ath_ie=dd0900037f01010000ff7f
+          Cell 34 - Address: 30:91:8F:25:54:70
+                    ESSID:"CenturyLink0269"
+                    Mode:Master
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=10/70  Signal level=-85 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+          Cell 35 - Address: 50:17:FF:34:5D:F0
+                    ESSID:"WinWiFi"
+                    Mode:Master
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=11/70  Signal level=-84 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 6 Mb/s; 9 Mb/s
+                              11 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=102
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : 802.1X  
+                       Preauthentication Supported
+                    Extra:wme_ie=dd180050f2020101800005a600002ca800004553000072420000
+          Cell 36 - Address: 0A:18:0A:79:24:4A
+                    ESSID:""
+                    Mode:Master
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=8/70  Signal level=-87 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:11 Mb/s; 6 Mb/s; 9 Mb/s; 12 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    Extra:wme_ie=dd180050f2020101850003a4000027a4000042435e0062322f00
+                    Extra:ath_ie=dd0900037f01010000ff7f
+          Cell 37 - Address: 50:17:FF:34:5D:F1
+                    ESSID:"WinGuest"
+                    Mode:Master
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=11/70  Signal level=-84 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 6 Mb/s; 9 Mb/s
+                              11 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=102
+                    Extra:wme_ie=dd180050f2020101800005a600002ca800004553000072420000
+          Cell 38 - Address: 28:C6:8E:02:07:EA
+                    ESSID:"NETGEAR66"
+                    Mode:Master
+                    Frequency:2.417 GHz (Channel 2)
+                    Quality=12/70  Signal level=-83 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101820003a4000027a4000042435e0062322f00
+          Cell 39 - Address: 00:22:BD:9A:42:80
+                    ESSID:""
+                    Mode:Master
+                    Frequency:2.422 GHz (Channel 3)
+                    Quality=18/70  Signal level=-77 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 6 Mb/s; 9 Mb/s
+                              11 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    Extra:wme_ie=dd180050f2020101810003a5000027a500004254bc0062436600
+          Cell 40 - Address: 00:0D:97:04:AD:A8
+                    ESSID:"RidgeviewTel"
+                    Mode:Master
+                    Frequency:2.427 GHz (Channel 4)
+                    Quality=27/70  Signal level=-68 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 6 Mb/s; 9 Mb/s
+                              11 Mb/s; 12 Mb/s; 18 Mb/s
+                    Extra:bcn_int=250
+                    Extra:wme_ie=dd180050f2020101810003a4000027a4000042435e0062322f00
+          Cell 41 - Address: 00:0D:97:07:D2:B7
+                    ESSID:"RidgeviewTel"
+                    Mode:Master
+                    Frequency:2.427 GHz (Channel 4)
+                    Quality=21/70  Signal level=-74 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 6 Mb/s; 9 Mb/s
+                              11 Mb/s; 12 Mb/s; 18 Mb/s
+                    Extra:bcn_int=250
+                    Extra:wme_ie=dd180050f2020101810003a4000027a4000042435e0062322f00
+          Cell 42 - Address: 00:0D:97:04:AD:C6
+                    ESSID:"RidgeviewTel"
+                    Mode:Master
+                    Frequency:2.427 GHz (Channel 4)
+                    Quality=13/70  Signal level=-82 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 6 Mb/s; 9 Mb/s
+                              11 Mb/s; 12 Mb/s; 18 Mb/s
+                    Extra:bcn_int=250
+                    Extra:wme_ie=dd180050f2020101810003a4000027a4000042435e0062322f00
+          Cell 43 - Address: 00:0D:97:04:8E:80
+                    ESSID:"RidgeviewTel"
+                    Mode:Master
+                    Frequency:2.427 GHz (Channel 4)
+                    Quality=21/70  Signal level=-74 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 6 Mb/s; 9 Mb/s
+                              11 Mb/s; 12 Mb/s; 18 Mb/s
+                    Extra:bcn_int=250
+                    Extra:wme_ie=dd180050f2020101810003a4000027a4000042435e0062322f00
+          Cell 44 - Address: E4:F4:C6:16:EC:D0
+                    ESSID:"NETGEAR83"
+                    Mode:Master
+                    Frequency:2.427 GHz (Channel 4)
+                    Quality=2/70  Signal level=-93 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101880003a4000027a400004243bc0062326600
+          Cell 45 - Address: 88:DC:96:0C:91:8C
+                    ESSID:"FBP Corp Longmont 2.4"
+                    Mode:Master
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=17/70  Signal level=-78 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101020003a4000027a4000042435e0062322f00
+                    Extra:ath_ie=dd0900037f01010000ff7f
+          Cell 46 - Address: 8A:DC:96:0C:91:8C
+                    ESSID:"FBP Guest Longmont 2.4"
+                    Mode:Master
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=17/70  Signal level=-78 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101020003a4000027a4000042435e0062322f00
+                    Extra:ath_ie=dd0900037f01010000ff7f
+          Cell 47 - Address: 00:02:6F:5E:B5:6C
+                    ESSID:"mmcb_test"
+                    Mode:Master
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=22/70  Signal level=-73 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s
+                    Extra:bcn_int=100
+                    Extra:ath_ie=dd0900037f01010004ff7f
+          Cell 48 - Address: 88:DC:96:0C:91:98
+                    ESSID:""
+                    Mode:Master
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=14/70  Signal level=-81 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101020003a4000027a4000042435e0062322f00
+                    Extra:ath_ie=dd0900037f01010000ff7f
+          Cell 49 - Address: 00:06:25:4A:96:1A
+                    ESSID:"CA - Wireless"
+                    Mode:Master
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=10/70  Signal level=-85 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+          Cell 50 - Address: C0:56:27:07:1C:BA
+                    ESSID:"Home56_Main"
+                    Mode:Master
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=7/70  Signal level=-88 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+                    Extra:ath_ie=dd0900037f01010000ff7f
+          Cell 51 - Address: 38:2C:4A:A3:CF:D8
+                    ESSID:"suscooks"
+                    Mode:Master
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=5/70  Signal level=-90 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101840003a4000027a4000042435e0062322f00
+          Cell 52 - Address: 00:22:0C:26:5D:C0
+                    ESSID:"JSMHHWIFI"
+                    Mode:Master
+                    Frequency:2.447 GHz (Channel 8)
+                    Quality=15/70  Signal level=-80 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 6 Mb/s; 9 Mb/s
+                              11 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    Extra:wme_ie=dd180050f2020101810003a5000027a500004254bc0062436600
+          Cell 53 - Address: A0:63:91:2C:32:03
+                    ESSID:"NETGEAR35"
+                    Mode:Master
+                    Frequency:2.452 GHz (Channel 9)
+                    Quality=7/70  Signal level=-88 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101880003a4000027a400004243bc0062326600
+          Cell 54 - Address: E4:F4:C6:11:EB:16
+                    ESSID:"NETGEAR17"
+                    Mode:Master
+                    Frequency:2.452 GHz (Channel 9)
+                    Quality=5/70  Signal level=-90 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101880003a4000027a400004243bc0062326600
+          Cell 55 - Address: C4:04:15:4A:1F:14
+                    ESSID:"NETGEAR82"
+                    Mode:Master
+                    Frequency:2.452 GHz (Channel 9)
+                    Quality=8/70  Signal level=-87 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101880003a4000027a400004243bc0062326600
+          Cell 56 - Address: E8:FC:AF:F8:6B:C7
+                    ESSID:"Beatrix"
+                    Mode:Master
+                    Frequency:2.452 GHz (Channel 9)
+                    Quality=4/70  Signal level=-91 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101840003a4000027a400004243bc0062326600
+          Cell 57 - Address: 00:1B:90:55:76:F0
+                    ESSID:""
+                    Mode:Master
+                    Frequency:2.457 GHz (Channel 10)
+                    Quality=18/70  Signal level=-77 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s
+                    Extra:bcn_int=100
+                    Extra:wme_ie=dd180050f2020101810003a5000027a5000042545e0062432f00
+          Cell 58 - Address: C6:56:27:BE:8B:6F
+                    ESSID:"Colorado Tech Shop-guest"
+                    Mode:Master
+                    Frequency:2.457 GHz (Channel 10)
+                    Quality=21/70  Signal level=-74 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+          Cell 59 - Address: 20:25:64:AC:6A:D2
+                    ESSID:"xfinitywifi"
+                    Mode:Master
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=21/70  Signal level=-74 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+                    Extra:ath_ie=dd0900037f01010000ff7f
+          Cell 60 - Address: 0A:18:0A:79:24:15
+                    ESSID:"Guest"
+                    Mode:Master
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=22/70  Signal level=-73 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:11 Mb/s; 6 Mb/s; 9 Mb/s; 12 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    Extra:wme_ie=dd180050f2020101850003a4000027a4000042435e0062322f00
+                    Extra:ath_ie=dd0900037f01010000ff7f
+          Cell 61 - Address: 60:A4:4C:DD:67:68
+                    ESSID:"Swim Float Swim"
+                    Mode:Master
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=12/70  Signal level=-83 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101840003a4000027a4000042435e0062322f00
+          Cell 62 - Address: 0A:18:0A:79:24:15
+                    ESSID:""
+                    Mode:Master
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=29/70  Signal level=-66 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:11 Mb/s; 6 Mb/s; 9 Mb/s; 12 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    Extra:wme_ie=dd180050f2020101850003a4000027a4000042435e0062322f00
+                    Extra:ath_ie=dd0900037f01010000ff7f
+          Cell 63 - Address: C0:8A:DE:22:3A:28
+                    ESSID:"TPCA-Guest"
+                    Mode:Master
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=7/70  Signal level=-88 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    Extra:wme_ie=dd180050f20201018c0003a4000027a4000042435e0062322f00
+          Cell 64 - Address: DC:9F:DB:1C:D0:C3
+                    ESSID:"LPC UNIFI"
+                    Mode:Master
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=10/70  Signal level=-85 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    Extra:wme_ie=dd180050f2020101810003a4000027a4000042435e0062322f00
+                    Extra:ath_ie=dd0900037f01010000ff7f
+          Cell 65 - Address: 00:30:44:19:95:5F
+                    ESSID:"FORD104A"
+                    Mode:Master
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=7/70  Signal level=-88 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 9 Mb/s
+                              18 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 12 Mb/s
+                              24 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101000003a4000027a4000042435e0062322f00
+          Cell 66 - Address: C0:FF:D4:88:57:2A
+                    ESSID:"Johnson's WiFi"
+                    Mode:Master
+                    Frequency:2.422 GHz (Channel 3)
+                    Quality=10/70  Signal level=-85 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101880003a4000027a4000042435e0062322f00
+          Cell 67 - Address: 00:0D:97:04:A8:2A
+                    ESSID:"RidgeviewTel"
+                    Mode:Master
+                    Frequency:2.427 GHz (Channel 4)
+                    Quality=21/70  Signal level=-74 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 6 Mb/s; 9 Mb/s
+                              11 Mb/s; 12 Mb/s; 18 Mb/s
+                    Extra:bcn_int=250
+                    Extra:wme_ie=dd180050f2020101810003a4000027a4000042435e0062322f00
+          Cell 68 - Address: C0:8A:DE:62:34:38
+                    ESSID:"TPCA-Staff"
+                    Mode:Master
+                    Frequency:2.427 GHz (Channel 4)
+                    Quality=7/70  Signal level=-88 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f20201018c0003a4000027a4000042435e0062322f00
+          Cell 69 - Address: A0:63:91:EB:B3:F8
+                    ESSID:"NETGEAR09"
+                    Mode:Master
+                    Frequency:2.432 GHz (Channel 5)
+                    Quality=0/70  Signal level=-95 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101880003a4000027a400004243bc0062326600
+          Cell 70 - Address: A0:63:91:41:A7:FB
+                    ESSID:"Home56"
+                    Mode:Master
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=10/70  Signal level=-85 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+          Cell 71 - Address: C0:8A:DE:61:D6:B8
+                    ESSID:"TPCA-Staff"
+                    Mode:Master
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=8/70  Signal level=-87 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f20201018c0003a4000027a4000042435e0062322f00
+          Cell 72 - Address: 0A:18:0A:79:24:37
+                    ESSID:""
+                    Mode:Master
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=10/70  Signal level=-85 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:11 Mb/s; 6 Mb/s; 9 Mb/s; 12 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    Extra:wme_ie=dd180050f2020101850003a4000027a4000042435e0062322f00
+                    Extra:ath_ie=dd0900037f01010000ff7f
+          Cell 73 - Address: 00:17:C5:CD:1D:C3
+                    ESSID:"Flexco_router"
+                    Mode:Master
+                    Frequency:2.447 GHz (Channel 8)
+                    Quality=3/70  Signal level=-92 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (1) : TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101880003a4000027a4000042435e0062322f00
+                    Extra:ath_ie=dd0900037f01010000ff7f
+          Cell 74 - Address: A0:63:91:D7:48:25
+                    ESSID:"NETGEAR63"
+                    Mode:Master
+                    Frequency:2.452 GHz (Channel 9)
+                    Quality=3/70  Signal level=-92 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f202010184000364000027a4000041435e0061322f00
+          Cell 75 - Address: C0:C1:C0:94:4B:30
+                    ESSID:"Bakery"
+                    Mode:Master
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=8/70  Signal level=-87 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+          Cell 76 - Address: EC:B1:D7:D5:92:4E
+                    ESSID:"HP-Print-4E-Officejet 4630"
+                    Mode:Master
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=9/70  Signal level=-86 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 6 Mb/s; 9 Mb/s
+                              11 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+          Cell 77 - Address: 00:0D:97:07:D0:C8
+                    ESSID:"RidgeviewTel"
+                    Mode:Master
+                    Frequency:2.427 GHz (Channel 4)
+                    Quality=12/70  Signal level=-83 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 6 Mb/s; 9 Mb/s
+                              11 Mb/s; 12 Mb/s; 18 Mb/s
+                    Extra:bcn_int=250
+                    Extra:wme_ie=dd180050f2020101810003a4000027a4000042435e0062322f00
+          Cell 78 - Address: 74:85:2A:77:3F:0A
+                    ESSID:"xfinitywifi"
+                    Mode:Master
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=6/70  Signal level=-89 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+                    Extra:ath_ie=dd0900037f01010000ff7f
+          Cell 79 - Address: 00:0D:97:04:AD:A7
+                    ESSID:"RidgeviewTel"
+                    Mode:Master
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=27/70  Signal level=-68 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 6 Mb/s; 9 Mb/s
+                              11 Mb/s; 12 Mb/s; 18 Mb/s
+                    Extra:bcn_int=250
+                    Extra:wme_ie=dd180050f2020101810003a4000027a4000042435e0062322f00
+          Cell 80 - Address: C4:E9:84:FC:E2:D1
+                    ESSID:"TP-LINK_E2D1"
+                    Mode:Master
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=7/70  Signal level=-88 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101840003a4000027a4000042435e0062322f00
+          Cell 81 - Address: 88:DC:96:0C:91:98
+                    ESSID:"FBP Corp Longmont 2.4"
+                    Mode:Master
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=12/70  Signal level=-83 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (2) : CCMP TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101020003a4000027a4000042435e0062322f00
+                    Extra:ath_ie=dd0900037f01010000ff7f
+          Cell 82 - Address: B8:C7:5D:0B:A7:B1
+                    ESSID:"DPAMicrophonesWiFi"
+                    Mode:Master
+                    Frequency:2.442 GHz (Channel 7)
+                    Quality=10/70  Signal level=-85 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101010003a4000027a4000042435e0062322f00
+          Cell 83 - Address: 00:26:F2:9F:28:A9
+                    ESSID:"I703MN6S"
+                    Mode:Master
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=7/70  Signal level=-88 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101830003a4000027a4000042435e0062322f00
+          Cell 84 - Address: 00:0D:97:07:D1:8E
+                    ESSID:"RidgeviewTel"
+                    Mode:Master
+                    Frequency:2.447 GHz (Channel 8)
+                    Quality=15/70  Signal level=-80 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 6 Mb/s; 9 Mb/s
+                              11 Mb/s; 12 Mb/s; 18 Mb/s
+                    Extra:bcn_int=250
+                    Extra:wme_ie=dd180050f2020101810003a4000027a4000042435e0062322f00
+          Cell 85 - Address: C0:8A:DE:38:24:18
+                    ESSID:"TPCA-Guest"
+                    Mode:Master
+                    Frequency:2.452 GHz (Channel 9)
+                    Quality=7/70  Signal level=-88 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    Extra:wme_ie=dd180050f2020101880003a4000027a4000042435e0062322f00
+          Cell 86 - Address: C0:8A:DE:21:D6:B8
+                    ESSID:"TPCA-Guest"
+                    Mode:Master
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=9/70  Signal level=-86 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    Extra:wme_ie=dd180050f20201018c0003a4000027a4000042435e0062322f00
+          Cell 87 - Address: 74:85:2A:82:D9:8A
+                    ESSID:"xfinitywifi"
+                    Mode:Master
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=5/70  Signal level=-90 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+                    Extra:ath_ie=dd0900037f01010000ff7f
+          Cell 88 - Address: 00:0D:97:04:98:B4
+                    ESSID:"RidgeviewTel"
+                    Mode:Master
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=28/70  Signal level=-67 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 6 Mb/s; 9 Mb/s
+                              11 Mb/s; 12 Mb/s; 18 Mb/s
+                    Extra:bcn_int=250
+                    Extra:wme_ie=dd180050f2020101810003a4000027a4000042435e0062322f00
+          Cell 89 - Address: 00:0D:97:07:D0:D8
+                    ESSID:"RidgeviewTel"
+                    Mode:Master
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=26/70  Signal level=-69 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 6 Mb/s; 9 Mb/s
+                              11 Mb/s; 12 Mb/s; 18 Mb/s
+                    Extra:bcn_int=250
+                    Extra:wme_ie=dd180050f2020101810003a4000027a4000042435e0062322f00
+          Cell 90 - Address: 02:05:D5:A0:01:8C
+                    ESSID:"MSS-Guest-2"
+                    Mode:Master
+                    Frequency:2.442 GHz (Channel 7)
+                    Quality=3/70  Signal level=-92 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP 
+                        Pairwise Ciphers (1) : TKIP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101000003a4000027a4000042435e0062322f00
+          Cell 91 - Address: C0:8A:DE:62:3A:28
+                    ESSID:"TPCA-Staff"
+                    Mode:Master
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=6/70  Signal level=-89 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f20201018c0003a4000027a4000042435e0062322f00
+          Cell 92 - Address: 4A:F8:B3:D0:6F:99
+                    ESSID:"Michael'sRestaurant-guest"
+                    Mode:Master
+                    Frequency:2.422 GHz (Channel 3)
+                    Quality=4/70  Signal level=-91 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+          Cell 93 - Address: E0:46:9A:82:8D:6A
+                    ESSID:"Fishbone"
+                    Mode:Master
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=4/70  Signal level=-91 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+          Cell 94 - Address: C0:C1:C0:94:4B:32
+                    ESSID:"Bakery-guest"
+                    Mode:Master
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=6/70  Signal level=-89 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+          Cell 95 - Address: 00:0D:97:07:D1:88
+                    ESSID:"RidgeviewTel"
+                    Mode:Master
+                    Frequency:2.427 GHz (Channel 4)
+                    Quality=12/70  Signal level=-83 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 6 Mb/s; 9 Mb/s
+                              11 Mb/s; 12 Mb/s; 18 Mb/s
+                    Extra:bcn_int=250
+                    Extra:wme_ie=dd180050f2020101810003a4000027a4000042435e0062322f00
+          Cell 96 - Address: E4:F4:C6:1B:04:3F
+                    ESSID:"Willson2.4"
+                    Mode:Master
+                    Frequency:2.417 GHz (Channel 2)
+                    Quality=0/70  Signal level=-95 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101880003a4000027a400004243bc0062326600
+          Cell 97 - Address: 00:0D:97:07:D1:50
+                    ESSID:"RidgeviewTel"
+                    Mode:Master
+                    Frequency:2.427 GHz (Channel 4)
+                    Quality=12/70  Signal level=-83 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 6 Mb/s; 9 Mb/s
+                              11 Mb/s; 12 Mb/s; 18 Mb/s
+                    Extra:bcn_int=250
+                    Extra:wme_ie=dd180050f2020101810003a4000027a4000042435e0062322f00
+          Cell 98 - Address: 00:0D:97:04:98:6C
+                    ESSID:"RidgeviewTel"
+                    Mode:Master
+                    Frequency:2.427 GHz (Channel 4)
+                    Quality=10/70  Signal level=-85 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 6 Mb/s; 9 Mb/s
+                              11 Mb/s; 12 Mb/s; 18 Mb/s
+                    Extra:bcn_int=250
+                    Extra:wme_ie=dd180050f2020101810003a4000027a4000042435e0062322f00
+          Cell 99 - Address: 00:0D:97:07:D0:2D
+                    ESSID:"RidgeviewTel"
+                    Mode:Master
+                    Frequency:2.447 GHz (Channel 8)
+                    Quality=10/70  Signal level=-85 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 6 Mb/s; 9 Mb/s
+                              11 Mb/s; 12 Mb/s; 18 Mb/s
+                    Extra:bcn_int=250
+                    Extra:wme_ie=dd180050f2020101810003a4000027a4000042435e0062322f00
+          Cell 100 - Address: E6:F4:C6:0F:A1:3F
+                    ESSID:"GreenMusicStudio"
+                    Mode:Master
+                    Frequency:2.452 GHz (Channel 9)
+                    Quality=3/70  Signal level=-92 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=200
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101880003a4000027a400004243bc0062326600
+          Cell 101 - Address: 78:24:AF:97:18:71
+                    ESSID:"PJ's_Guests"
+                    Mode:Master
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=2/70  Signal level=-93 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    Extra:wme_ie=dd180050f2020101840003a4000027a4000042435e0062322f00
+          Cell 102 - Address: 50:6A:03:C7:4D:61
+                    ESSID:"NETGEAR06"
+                    Mode:Master
+                    Frequency:2.427 GHz (Channel 4)
+                    Quality=2/70  Signal level=-93 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101840003a4000027a4000042435e0062322f00
+          Cell 103 - Address: 78:24:AF:97:18:70
+                    ESSID:"PJ's"
+                    Mode:Master
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=3/70  Signal level=-92 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101840003a4000027a4000042435e0062322f00
+          Cell 104 - Address: C8:D7:19:1E:C3:9B
+                    ESSID:"HartWood"
+                    Mode:Master
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=6/70  Signal level=-89 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+          Cell 105 - Address: 00:0D:97:04:B4:AC
+                    ESSID:"RidgeviewTel"
+                    Mode:Master
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=19/70  Signal level=-76 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 6 Mb/s; 9 Mb/s
+                              11 Mb/s; 12 Mb/s; 18 Mb/s
+                    Extra:bcn_int=250
+                    Extra:wme_ie=dd180050f2020101810003a4000027a4000042435e0062322f00
+          Cell 106 - Address: E4:F4:C6:0F:A1:3E
+                    ESSID:"GHOME"
+                    Mode:Master
+                    Frequency:2.452 GHz (Channel 9)
+                    Quality=3/70  Signal level=-92 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=200
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101880003a4000027a400004243bc0062326600
+          Cell 107 - Address: 0A:18:0A:79:24:37
+                    ESSID:"Guest"
+                    Mode:Master
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=1/70  Signal level=-94 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:11 Mb/s; 6 Mb/s; 9 Mb/s; 12 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    Extra:wme_ie=dd180050f2020101850003a4000027a4000042435e0062322f00
+                    Extra:ath_ie=dd0900037f01010000ff7f
+          Cell 108 - Address: C0:7C:D1:D3:39:7A
+                    ESSID:"xfinitywifi"
+                    Mode:Master
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=4/70  Signal level=-91 dBm  Noise level=-95 dBm
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+                    Extra:ath_ie=dd0900037f01010000ff7f
+          Cell 109 - Address: DC:4A:3E:2F:B6:6F
+                    ESSID:"HP-Print-6F-Officejet Pro 8610"
+                    Mode:Master
+                    Frequency:2.432 GHz (Channel 5)
+                    Quality=6/70  Signal level=-89 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 6 Mb/s; 9 Mb/s
+                              11 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+          Cell 110 - Address: 8A:F7:C7:2F:BC:C3
+                    ESSID:""
+                    Mode:Master
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=8/70  Signal level=-87 dBm  Noise level=-95 dBm
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Extra:bcn_int=100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP 
+                        Pairwise Ciphers (1) : CCMP 
+                        Authentication Suites (1) : PSK  
+                    Extra:wme_ie=dd180050f2020101800003a4000027a4000042435e0062322f00
+

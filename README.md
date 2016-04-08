@@ -16,3 +16,4 @@ These are some scripts that I use at home. Mostly related to processing images.
 - pingplot.plt: gnuplot file for use with pingplot.sh
 - iwlist_csv.sh: convert the output of a `iwlist scan` command into CSV format
 - iwlist_scan.txt: an example output of `iwlist scan` output
+- netcomp.py: A compare two PADS layout netlists (OrCAD netlist output = pads2k).

@@ -89,6 +89,9 @@ if __name__ == '__main__':
     snets1 = set( nets1.keys() )
     snets2 = set( nets2.keys() )
 
+    print "Netlist difference created by " +PROG +"version " +VERSION
+    print ""
+
     print "Nets in " +options.file1 +" but not in " +options.file1 +":"
     only1 = snets1 - snets2
     print list(only1)

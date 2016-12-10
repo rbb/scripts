@@ -5,7 +5,7 @@
 exposure=${1:-'0'}
 
 # Convert all the CR2 files to jpg
-time ufraw-batch --out-type=jpg --exposure=$exposure
+time ufraw-batch --out-type=jpg --exposure=$exposure *.CR2
 
 
 # create an mov

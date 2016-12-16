@@ -1,37 +1,24 @@
 
-from PIL import Image
-#import Image
+#from PIL import Image
+import Image
 import numpy as np
 from scipy import misc
 import datetime
 import time
+import glob
+import sys
 
 start_time = datetime.datetime.now()
 tic = time.clock()
-#im = Image.open('IMG_6360.jpg')
-
-#k=0
-#imlist=[]
-#for n in range(6360, 6560):
-#    fname = 'IMG_'+str(n)+'.jpg'
-#    im = Image.open(fname)
-#    #imlist.append(im)
-#
-#    try:
-#        data = np.asarray( im, dtype='uint8' )
-#    except SystemError:
-#        data = np.asarray( im.getdata(), dtype='uint8' )
 
 
-#print im.format, im.size, im.mode
+filelist = glob.glob("*.jpg")
+#print filelist
 
-start = 6360
-stop = 6576
-#stop = 6363
-K = stop - start
+K=len(filelist)
 
-
-fname = 'IMG_'+str(start)+'.jpg'
+#fname = 'IMG_'+str(start)+'.jpg'
+fname = filelist[0]
 print 'loading ' +fname
 im_first=misc.imread(fname)
 
@@ -43,8 +30,8 @@ imar=np.zeros([X,Y,depth,2])
 im_max=np.zeros([X,Y,depth])
 im_sum=np.zeros([X,Y,depth])
 k=0
-for n in range(start, stop):
-    fname = 'IMG_'+str(n)+'.jpg'
+#for n in range(start, stop):
+for fname in filelist:
     print 'Processing ' +fname
     im = misc.imread(fname)
     #im = np.array(Image.open(fname))

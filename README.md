@@ -16,3 +16,6 @@ These are some scripts that I use at home. Mostly related to processing images.
 - pingplot.plt: gnuplot file for use with pingplot.sh
 - iwlist_csv.sh: convert the output of a `iwlist scan` command into CSV format
 - iwlist_scan.txt: an example output of `iwlist scan` output
+- pkglist: Attempt to list all the (debian/apt) packages that are installed, as
+           a request by the user - ie. no depenencies, just the stuff that was
+           part of an `apt-get install` or `aptitude install` line.

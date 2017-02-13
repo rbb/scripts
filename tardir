@@ -1,0 +1,21 @@
+#!/bin/sh
+
+dir=$1
+ARCHIVE_EXCLUDES=${2:-"*.swp"}
+
+if [ -z $1 ] || [ $1 == "-h" ]; then
+   echo ''
+   echo 'usage: tardir name exclude'
+   echo '   creates name_YY-MM-DD_HH-mm-ss.tar.bz2 from name/* --exclude=exclude'
+   echo ''
+   exit
+fi
+#archive_name=`date +${dir}_%Y-%m-%d_%H-%M-%S.tar.xv`
+archive_name=`date +${dir}_%Y-%m-%d_%H-%M-%S.tar.bz2`
+
+#echo "archive_name = $archive_name"
+#echo "excludes = $ARCHIVE_EXCLUDES"
+
+#tar cvfj $archive_name $dir/* --exclude="$ARCHIVE_EXCLUDES"
+tar cvfj $archive_name $dir
+

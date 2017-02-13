@@ -19,3 +19,4 @@ These are some scripts that I use at home. Mostly related to processing images.
 - pkglist: Attempt to list all the (debian/apt) packages that are installed, as
            a request by the user - ie. no depenencies, just the stuff that was
            part of an `apt-get install` or `aptitude install` line.
+- tardir   Create a compressed archive of a directory, with a timestamp in the name

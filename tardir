@@ -1,6 +1,9 @@
 #!/bin/sh
 
-dir=$1
+# The code below removes the trailing '/' from the directory, if it exists,
+# because the trailing '/' screws up the tar command.
+dir=`dirname $1`/`basename $1`
+
 ARCHIVE_EXCLUDES=${2:-"*.swp"}
 
 if [ -z $1 ] || [ $1 == "-h" ]; then

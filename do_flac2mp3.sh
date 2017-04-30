@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# convert all .flac files in current directory to .mp3 files
+# convert all .flac files in the current directory to .mp3 files
 
 for f in *.flac
 do

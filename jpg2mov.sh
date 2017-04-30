@@ -1,5 +1,7 @@
 #!/bin/sh
 
+#NOTE: This script MUST be run from the directory with all the *.jpg images in it
+
 # create an mov from jpegs
 #
 # ffmpeg options culled from the following sources:

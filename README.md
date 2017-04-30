@@ -20,3 +20,4 @@ These are some scripts that I use at home. Mostly related to processing images.
            a request by the user - ie. no depenencies, just the stuff that was
            part of an `apt-get install` or `aptitude install` line.
 - tardir   Create a compressed archive of a directory, with a timestamp in the name
+- git-reauthor.sh: Change the authors on git commits.

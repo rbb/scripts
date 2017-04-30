@@ -39,7 +39,7 @@ do
        ;;
        -u)
        rotdir=$LFLIP
-       rotcmd='"transpose=clock,transpose=clock"'
+       rotcmd='transpose=clock,transpose=clock'
        ;;
        -o|--outfile)
        out="$2"
@@ -82,26 +82,38 @@ if [ "$cur_rotate" == "90" ]; then
    # IF we know that the video just rotated, then we can do this MUCH quicker 
    # by just updating metadata, without having to decode then recode the data.
    if [ "$rotdir" == "$LEFT" ]; then
-      cmd="ffmpeg -i $f -map_metadata 0 -metadata:s:v rotate=\"180\" -codec copy $out"
+      cmd="ffmpeg -y -i $f -map_metadata 0 -metadata:s:v rotate=0 -codec copy $out"
    elif [ "$rotdir" == "$RIGHT" ]; then
-      cmd="ffmpeg -i $f -map_metadata 0 -metadata:s:v rotate=\"0\" -codec copy $out"
+      cmd="ffmpeg -y -i $f -map_metadata 0 -metadata:s:v rotate=180 -codec copy $out"
    else
-      cmd="ffmpeg -i $f -map_metadata 0 -metadata:s:v rotate=\"270\" -codec copy $out"
-      echo "WARNING: rotating to upside-down on 90 degree input has not been tested"
+      cmd="ffmpeg -y -i $f -map_metadata 0 -metadata:s:v rotate=270 -codec copy $out"
+   fi
+elif [ "$cur_rotate" == "180" ]; then
+   if [ "$rotdir" == "$LEFT" ]; then
+      cmd="ffmpeg -y -i $f -map_metadata 0 -metadata:s:v rotate=90 -codec copy $out"
+      echo "WARNING: cur_rotate=180 rotating left has not been tested"
+   elif [ "$rotdir" == "$RIGHT" ]; then
+      cmd="ffmpeg -y -i $f -map_metadata 0 -metadata:s:v rotate=270 -codec copy $out"
+      echo "WARNING: cur_rotate=180 rotating right has not been tested"
+   else
+      cmd="ffmpeg -y -i $f -map_metadata 0 -metadata:s:v rotate=0 -codec copy $out"
    fi
 else
    # As a last resort, do it the hard way, and rotate it be decoding and encoding
-   cmd="ffmpeg -i $f -filter:v $rotcmd -c:v libx264 -preset veryfast -crf 22 -c:a copy -map_metadata 0 -metadata:s:v rotate=\"\" $out"
+   cmd="ffmpeg -y -i $f -filter:v $rotcmd -c:v libx264 -preset veryfast -crf 22 -c:a copy -map_metadata 0 -metadata:s:v rotate=\"\" $out"
 fi
 
 echo "cmd=$cmd"
 time `$cmd`
 
 # Update timestamps to match
-touch -r "$f" "$out"
-if command -v GetFileInfo &>/dev/null; then 
-   SetFile -d "$(GetFileInfo -d $f)" "$out"
-fi
+#touch -r "$f" "$out"
+#if command -v GetFileInfo &>/dev/null; then 
+#   SetFile -d "$(GetFileInfo -d $f)" "$out"
+#fi
 
 #TODO: should the output be in prores format for easier editing? See example below.
 #time ffmpeg -f image2 -pattern_type glob -i "*.jpg" -r 30 -s 1920x1080 -c:v prores_ks -pix_fmt yuv444p10le "${mov_name}.mov"
+
+#ffmpeg -y -i IMG_8655.MOV -map_metadata 0 -metadata:s:v rotate="180" -codec copy IMG_8655_rot.MOV -y
+#ffmpeg -y -i IMG_8655.MOV -map_metadata 0 -metadata:s:v rotate="180" -codec copy IMG_8655_rot.MOV

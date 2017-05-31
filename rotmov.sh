@@ -98,6 +98,16 @@ elif [ "$cur_rotate" == "180" ]; then
    else
       cmd="ffmpeg -y -i $f -map_metadata 0 -metadata:s:v rotate=0 -codec copy $out"
    fi
+elif [ "$cur_rotate" == "270" ]; then
+   if [ "$rotdir" == "$LEFT" ]; then
+      cmd="ffmpeg -y -i $f -map_metadata 0 -metadata:s:v rotate=180 -codec copy $out"
+      echo "WARNING: cur_rotate=180 rotating left has not been tested"
+   elif [ "$rotdir" == "$RIGHT" ]; then
+      cmd="ffmpeg -y -i $f -map_metadata 0 -metadata:s:v rotate=0 -codec copy $out"
+   else
+      cmd="ffmpeg -y -i $f -map_metadata 0 -metadata:s:v rotate=90 -codec copy $out"
+      echo "WARNING: cur_rotate=$cur_rotate rotating $rotdir has not been tested"
+   fi
 else
    # As a last resort, do it the hard way, and rotate it be decoding and encoding
    cmd="ffmpeg -y -i $f -filter:v $rotcmd -c:v libx264 -preset veryfast -crf 22 -c:a copy -map_metadata 0 -metadata:s:v rotate=\"\" $out"

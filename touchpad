@@ -1,0 +1,43 @@
+#!/bin/bash
+#sleep 1
+
+# Note: this script is heavily based on this blog post:
+# https://jimdean.id.au/2016/01/28/disabling-touchpad-when-using-a-mouse/
+
+# Note: This is for use on Linux systems. So far, it has only been tested on an
+# Asus G75V laptop running Xubuntu 16.04
+
+# This is a typical touchpad device, yours may vary. However since it has spaces
+# in the name, it was not trivial to do an awk on the output of 'xinput -- list'
+# to find the right device name. So, for now it is hand coded.
+#
+# TODO: automate device name detection with some better grep/awk foo.
+touchpad_dev="SynPS/2 Synaptics TouchPad"
+
+list=$(xinput --list | grep "$touchpad_dev")
+echo "list = $list"
+if [ ${#list} -eq 0 ]; then
+   echo "Could not find a \"$touchpad_dev\" device"
+   echo "Perhaps one of the devices below would work. Update this script:"
+   echo `xinput --list | grep -i 'touchpad'`
+   exit
+fi
+
+touchpad_id=$(xinput --list|grep "$touchpad_dev"|awk '{print $6}'|cut -d = -f 2)
+echo "id: $touchpad_id"
+
+touchpad_set_num=$(xinput --list-props "$touchpad_id"|grep -i "device enabled"|awk 'BEGIN {FS="[()]"} {print $2}' )
+echo "set_num: $touchpad_set_num"
+
+#touchpad_
+
+list=`xinput --list | grep -i 'mouse'`
+if [ ${#list} -eq 0 ]; then
+   echo "no mouse, ENabling touchpad"
+   xinput set-int-prop "$touchpad_dev" $touchpad_set_num 8 1
+   notify-send -t 300 -i touchpad-indicator "No Mouse found" "Your touchpad is set to ON"
+else
+   echo "Found mouse, DISabling touchpad"
+   xinput set-int-prop "$touchpad_dev" $touchpad_set_num 8 0
+   notify-send -t 300 -i preferences-desktop-peripherals "Mouse connected" "Your touchpad is now turned OFF"
+fi

@@ -2,7 +2,7 @@ import argparse
 import datetime
 import sys
 
-parser = argparse.ArgumentParser(description='decimate (and retime) a path from a kml file')
+parser = argparse.ArgumentParser(description='decimate (and retime) a folder or track from a kml file')
 #parser.add_argument('-i', '--ifile', metavar='F', type=str, action='store', default = "First day.kml",
 #parser.add_argument('-i', '--ifile', metavar='F', type=str, action='store', default = "20170527 Corral couloir.kml",
 parser.add_argument('-i', '--ifile', metavar='F', type=str, action='store', default = None,
@@ -21,11 +21,14 @@ parser.add_argument('-n', dest='retime', action='store_false', default = True,
                     help='No retime. Default is to retime the decimated track')
 parser.add_argument('-t', '--timeincr', metavar='F', type=str, action='store', default = "min",
                     help='time increment [sec|min|hour]')
+parser.add_argument('--append_str', metavar='F', type=str, action='store', default = '_dec',
+                    help='String to append to names in the kml output')
 parser.add_argument('-v', dest='verbose', action='store_true', default = False,
                     help='print some debug info')
 
 opts = parser.parse_args()
-print opts
+if opts.verbose:
+    print opts
 
 ofile = None
 fout = None
@@ -173,7 +176,7 @@ def retime_track(track, dlm="   ", eol="\n"):
             lineout = leading_spaces +t.strftime("<when>%Y-%m-%dT%H:%M:%S") +timezone +"</when>\n"
             ret_track += lineout
         else:
-            ret_track += line
+            ret_track += line +"\n"
     return ret_track
 
 #-----------------------------------
@@ -185,6 +188,7 @@ if opts.tracks:
     inside_track = False
     n = 0
     last_line = ""
+    dec_track = ""
     with f:
         for line in f:
             if "<Placemark>" in last_line and "<name>" in line:
@@ -195,8 +199,10 @@ if opts.tracks:
                 inside_track = True
             elif "</gx:Track>" in line:
                 inside_track = False
-                have_track_name = False
                 n = 0
+            elif "</Placemark>" in line:
+                dec_track += line
+                have_track_name = False
             elif "<when>" in last_line and "<gx:coord>" in line:
                 n = 0
           
@@ -204,9 +210,27 @@ if opts.tracks:
                 n = n + 1;
                 if n == opts.interval:
                    fout.write(line) 
+                   dec_track += line
                    n = 0
             else:
-               fout.write(line) 
+                if have_track_name:
+                    if "Data name" in last_line and "value" in line:
+                        name = line.split('>')[1].split('<')[0]
+                        dec_track += line.replace(name, name+opts.append_str)
+                    elif "<Placemark>" in last_line and "<name>" in line:
+                        dec_track += last_line
+                        dec_track += line.replace(name, name+opts.append_str)
+                    else:
+                        dec_track += line
+                if "</Document>" in line:
+                    #if opts.verbose:
+                    #    print "Document line = " +line
+                    if opts.retime:
+                        ret_tracks = retime_track(dec_track)
+                        fout.write(ret_tracks)
+                    else:
+                        fout.write(dec_track)
+                fout.write(line) 
             last_line = line
 
 elif opts.folder:
@@ -259,7 +283,7 @@ elif opts.folder:
 
             if store_folder:
                 if "<Folder>" in last_line and "<name>" in line:
-                    folder_out_str += line.replace(name, name+"_dec")
+                    folder_out_str += line.replace(name, name+opts.append_str)
                     leading_space = line[:len(line)-len(line.lstrip())]
                     folder_out_str += leading_space +"<visibility>0</visibility>\n"
                 elif "<Placemark>" in last_line and "<name>" in line:

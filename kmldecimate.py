@@ -16,6 +16,12 @@ parser.add_argument('--folder', metavar='F', type=str, action='store', default =
 #parser.add_argument('--tracks', metavar='F', type=str, action='store', default = Points,
 parser.add_argument('--tracks', metavar='F', type=str, action='store', default = None,
                     help='Track name')
+parser.add_argument('-n', dest='retime', action='store_false', default = True,
+                    help='No retime. Default is to retime the decimated track')
+parser.add_argument('-t', '--timeincr', metavar='F', type=str, action='store', default = "min",
+                    help='time increment [sec|min|hour]')
+parser.add_argument('-v', dest='verbose', action='store_true', default = False,
+                    help='print some debug info')
 
 opts = parser.parse_args()
 print opts
@@ -36,7 +42,8 @@ else:
 #--------------------------------------------------------------
 def folder2track(s, track_name, dlm="   ", eol="\n"):
 #--------------------------------------------------------------
-    print "folder2track()"
+    if opts.verbose:
+        print "folder2track()"
     track = dlm +"<Placemark>" +eol
     track += dlm +dlm +"<name>" +track_name +"</name>" +eol
     track += dlm +dlm +"<visibility>0</visibility>\n"
@@ -107,6 +114,58 @@ def folder2track(s, track_name, dlm="   ", eol="\n"):
 
     return track
 
+#--------------------------------------------------------------
+def retime_track(track, dlm="   ", eol="\n"):
+#--------------------------------------------------------------
+    start = False
+    inside_track = False
+    ret_track = ""
+    for line in track.split("\n"):
+        if "<gx:Track>" in line:
+            inside_track = True
+        elif "</gx:Track>" in line:
+            inside_track = False
+            start = False
+		
+        if "<when>" in line and inside_track:
+            n_leading_spaces = len(line) - len(line.lstrip())
+            leading_spaces = ''
+            for n in range(n_leading_spaces):
+                leading_spaces = leading_spaces + line[0]
+            if not start:
+                s = line.split('>')[1].split('<')[0]
+                print "retiming with Start Time: " +str(s)
+                s = s.split('T')
+                d = s[0].split('-')
+                year = int(d[0])
+                month = int(d[1])
+                day = int(d[2])
+
+                tline = s[1].split(':')
+                hour = int(tline[0])
+                minute = int(tline[1])
+                #second = int(tline[2].split('Z')[0])
+                second = int(tline[2][0:-1])
+
+                timezone = tline[2][-1]
+
+                #print ",".join([year, month, day, hour, minute, second])
+                start = datetime.datetime(year,month,day,hour,minute,second)
+                t = start
+            else:
+                if opts.timeincr[0] == 's':
+                    delta = datetime.timedelta(0,1)
+                elif opts.timeincr[0] == 'm':
+                    delta = datetime.timedelta(0,60)
+                elif opts.timeincr[0] == 'h':
+                    delta = datetime.timedelta(0,3600)
+                t = t + delta
+            #print "time: " +str(timenow)
+            lineout = leading_spaces +t.strftime("<when>%Y-%m-%dT%H:%M:%S") +timezone +"</when>\n"
+            ret_track += lineout
+        else:
+            ret_track += line
+    return ret_track
 
 if opts.tracks:
     # Handle the case of tracks
@@ -156,6 +215,8 @@ elif opts.folder:
                 if have_folder_name:
                     store_folder = True
                     dec_tracks = folder2track(folder_out_str, "dec_tracks")
+                    if opts.retime:
+                        ret_tracks = retime_track(dec_tracks)
                 have_folder_name = False
             if "</Folder>" in last_line:
                 store_folder = False
@@ -197,7 +258,10 @@ elif opts.folder:
                     folder_out_str += line
             if "</Document>" in line:
                 fout.write(folder_out_str)
-                fout.write(dec_tracks)
+                if opts.retime:
+                    fout.write(ret_tracks)
+                else:
+                    fout.write(dec_tracks)
                 #print dec_tracks
             fout.write(line) 
 
@@ -219,7 +283,7 @@ else:
        </Placemark>
     """
 
-
+#:vim ts=4
 
 
 

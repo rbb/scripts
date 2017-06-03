@@ -3,7 +3,6 @@ import datetime
 import sys
 
 parser = argparse.ArgumentParser(description='decimate (and retime) a folder or track from a kml file')
-#parser.add_argument('-i', '--ifile', metavar='F', type=str, action='store', default = "First day.kml",
 #parser.add_argument('-i', '--ifile', metavar='F', type=str, action='store', default = "20170527 Corral couloir.kml",
 parser.add_argument('-i', '--ifile', metavar='F', type=str, action='store', default = None,
                     help='input file. Leave blank to use stdin')

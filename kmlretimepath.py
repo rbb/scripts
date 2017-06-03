@@ -6,8 +6,8 @@ parser.add_argument('-i', '--ifile', metavar='F', type=str, action='store', defa
                     help='input file')
 parser.add_argument('-o', '--ofile', metavar='F', type=str, action='store', default = None,
                     help='output file')
-parser.add_argument('-t', '--timeincr', metavar='F', type=str, action='store', default = "sec",
-                    help='output file')
+parser.add_argument('-t', '--timeincr', metavar='F', type=str, action='store', default = "min",
+                    help='time increment [sec|min|hour]')
 
 opts = parser.parse_args()
 print opts
@@ -15,7 +15,7 @@ print opts
 if opts.ofile:
     ofile = opts.ofile
 else:
-    ofile = opts.ifile.split('.')[0] +'_out.' +opts.ifile.split('.')[1]
+    ofile = opts.ifile.split('.')[0] +'_retime.' +opts.ifile.split('.')[1]
     print "ofile: " +str(ofile)
 fout = open(ofile, 'w')
 

@@ -1,30 +1,36 @@
 import argparse
 import datetime
+import sys
 
 parser = argparse.ArgumentParser(description='retime a path from a kml file')
 #parser.add_argument('-i', '--ifile', metavar='F', type=str, action='store', default = "First day.kml",
 parser.add_argument('-i', '--ifile', metavar='F', type=str, action='store', default = "20170527 Corral couloir.kml",
                     help='input file')
 parser.add_argument('-o', '--ofile', metavar='F', type=str, action='store', default = None,
-                    help='output file')
+                    help='output file. Leave blank for stdout, use "-" to append "_dec" to input filename')
 parser.add_argument('-d', '--interval', metavar='F', type=int, action='store', default = 50,
-                    help='output file')
+                    help='Decimation interval. default = %(default)s')
 #parser.add_argument('--folder', metavar='F', type=str, action='store', default = "Points",
 parser.add_argument('--folder', metavar='F', type=str, action='store', default = None,
                     help='Folder name')
 #parser.add_argument('--tracks', metavar='F', type=str, action='store', default = Points,
 parser.add_argument('--tracks', metavar='F', type=str, action='store', default = None,
-                    help='Folder name')
+                    help='Track name')
 
 opts = parser.parse_args()
 print opts
 
+ofile = None
+fout = None
 if opts.ofile:
-    ofile = opts.ofile
+    if opts.ofile[0] == "-":
+        ofile = opts.ifile.split('.')[0] +'_dec.' +opts.ifile.split('.')[1]
+        print "ofile: " +str(ofile)
+    else:
+        ofile = opts.ofile
+    fout = open(ofile, 'w')
 else:
-    ofile = opts.ifile.split('.')[0] +'_dec.' +opts.ifile.split('.')[1]
-    print "ofile: " +str(ofile)
-fout = open(ofile, 'w')
+    fout = sys.stdout
 
 
 #--------------------------------------------------------------

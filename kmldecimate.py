@@ -2,10 +2,11 @@ import argparse
 import datetime
 import sys
 
-parser = argparse.ArgumentParser(description='retime a path from a kml file')
+parser = argparse.ArgumentParser(description='decimate (and retime) a path from a kml file')
 #parser.add_argument('-i', '--ifile', metavar='F', type=str, action='store', default = "First day.kml",
-parser.add_argument('-i', '--ifile', metavar='F', type=str, action='store', default = "20170527 Corral couloir.kml",
-                    help='input file')
+#parser.add_argument('-i', '--ifile', metavar='F', type=str, action='store', default = "20170527 Corral couloir.kml",
+parser.add_argument('-i', '--ifile', metavar='F', type=str, action='store', default = None,
+                    help='input file. Leave blank to use stdin')
 parser.add_argument('-o', '--ofile', metavar='F', type=str, action='store', default = None,
                     help='output file. Leave blank for stdout, use "-" to append "_dec" to input filename')
 parser.add_argument('-d', '--interval', metavar='F', type=int, action='store', default = 50,
@@ -28,9 +29,17 @@ print opts
 
 ofile = None
 fout = None
+if opts.ifile:
+    f = open(opts.ifile)
+else:
+    f = sys.stdin
+
 if opts.ofile:
     if opts.ofile[0] == "-":
-        ofile = opts.ifile.split('.')[0] +'_dec.' +opts.ifile.split('.')[1]
+        if opts.ifile:
+            ofile = opts.ifile.split('.')[0] +'_dec.' +opts.ifile.split('.')[1]
+        else:
+            ofile = "kmldecimate_dec.kml"
         print "ofile: " +str(ofile)
     else:
         ofile = opts.ofile
@@ -167,14 +176,16 @@ def retime_track(track, dlm="   ", eol="\n"):
             ret_track += line
     return ret_track
 
+#-----------------------------------
 if opts.tracks:
+#-----------------------------------
     # Handle the case of tracks
     have_track_name = False
     start = False
     inside_track = False
     n = 0
     last_line = ""
-    with open(opts.ifile) as f:
+    with f:
         for line in f:
             if "<Placemark>" in last_line and "<name>" in line:
                 name = line.split('>')[1].split('<')[0]
@@ -208,7 +219,8 @@ elif opts.folder:
     placemark = False
     n = opts.interval
     last_line = ""
-    with open(opts.ifile) as f:
+    #with open(opts.ifile) as f:
+    with f:
         for line in f:
             if "</Folder>" in line:
                 name = False

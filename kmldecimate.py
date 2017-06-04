@@ -186,6 +186,7 @@ if opts.tracks:
     start = False
     inside_track = False
     n = 0
+    npoints = 1
     last_line = ""
     dec_track = ""
     with f:
@@ -211,6 +212,7 @@ if opts.tracks:
                    fout.write(line) 
                    dec_track += line
                    n = 0
+                   npoints += 1
             else:
                 if have_track_name:
                     if "Data name" in last_line and "value" in line:
@@ -231,6 +233,7 @@ if opts.tracks:
                         fout.write(dec_track)
                 fout.write(line) 
             last_line = line
+    print "Decimated to " +str(npoints) +" points in track"
 
 elif opts.folder:
     # Handle the case of a folder of placemarks
@@ -241,6 +244,7 @@ elif opts.folder:
     name = False
     placemark = False
     n = opts.interval
+    npoints = 1
     last_line = ""
     #with open(opts.ifile) as f:
     with f:
@@ -274,6 +278,7 @@ elif opts.folder:
                     if n >= opts.interval:
                        store_folder = True
                        n = 0
+                       npoints += 1
                     else:
                        store_folder = False
                     #print str(n) +"    " +str(placemark) +"    " +str(store_folder)
@@ -301,6 +306,7 @@ elif opts.folder:
             fout.write(line) 
 
             last_line = line
+    print "Decimated to " +str(npoints) +" points in folder"
 
 
 else:

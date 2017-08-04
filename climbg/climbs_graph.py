@@ -20,8 +20,10 @@ import urllib2
 # TODO: Plot top 4 sends in a day
 # TODO: Plot intensity^2 method from Ben
 
+from os.path import expanduser
+home = expanduser("~")
 #filename='climbs_test.xls'
-filename='climbs.xls'
+filename=home +'/Dropbox/climbs.xls'
 xl = pd.ExcelFile(filename);
 
 # TODO: Figure out how to download the xls file from a (dropbox) URL

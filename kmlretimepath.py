@@ -1,27 +1,38 @@
 import argparse
 import datetime
+import sys
 
 parser = argparse.ArgumentParser(description='retime a path from a kml file')
-parser.add_argument('-i', '--ifile', metavar='F', type=str, action='store', default = "First day.kml",
-                    help='input file')
+parser.add_argument('-i', '--ifile', metavar='F', type=str, action='store', default = None,
+                    help='input file. Leave blank to use stdin')
 parser.add_argument('-o', '--ofile', metavar='F', type=str, action='store', default = None,
-                    help='output file')
-parser.add_argument('-t', '--timeincr', metavar='F', type=str, action='store', default = "sec",
-                    help='output file')
+                    help='output file. Leave blank for stdout, use "-" to append "_retime" to input filename')
+parser.add_argument('-t', '--timeincr', metavar='F', type=str, action='store', default = "min",
+                    help='time increment [sec|min|hour]')
 
 opts = parser.parse_args()
 print opts
 
-if opts.ofile:
-    ofile = opts.ofile
+ofile = None
+fout = None
+if opts.ifile:
+    f = open(opts.ifile)
 else:
-    ofile = opts.ifile.split('.')[0] +'_out.' +opts.ifile.split('.')[1]
-    print "ofile: " +str(ofile)
-fout = open(ofile, 'w')
+    f = sys.stdin
+
+if opts.ofile:
+    if opts.ofile[0] == "-":
+        ofile = opts.ifile.split('.')[0] +'_retime.' +opts.ifile.split('.')[1]
+        print "ofile: " +str(ofile)
+    else:
+        ofile = opts.ofile
+    fout = open(ofile, 'w')
+else:
+    fout = sys.stdout
 
 start = False
 inside_track = False
-with open(opts.ifile) as f:
+with f:
     for line in f:
         if "<gx:Track>" in line:
             inside_track = True

@@ -103,8 +103,12 @@ def get_fill_ewma(s_in, alpha = 0.4, N_window = 50):
         s_ewma = pd.ewma(s_in, span=N_window) / s_fill_no_zero_norm.mean()
 
     s_rm_ewma =  ( s_ewma* alpha  +  s_rm * (1.0 - alpha) )  /2
-    s_rm_ewma = s_rm_ewma.dropna()
-    return s_fill_no_zero, s_fill_no_zero_norm, s_rm_ewma
+    #s_rm_ewma = s_rm_ewma.dropna()
+
+    s_rm_ewma_norm = s_rm_ewma / s_rm_ewma.max()
+    s_rm_ewma_scale = s_rm_ewma_norm * (s_fill_no_zero.max() - s_fill_no_zero.min())
+    s_rm_ewma_scale += s_fill_no_zero.min()
+    return s_fill_no_zero, s_fill_no_zero_norm, s_rm_ewma, s_rm_ewma_scale
 
 #--------------------------------------------
 def dates_fill (df, col):
@@ -247,11 +251,12 @@ ax2 = plt.subplot(4,1,2)
 #s_adj_load_fill_no_zero, s_rm_ewma = get_fill_ewma(s_adj_load_fill, alpha = 0.4, N_window = 50)
 
 s_adj_endure_fill = dates_fill( df_climbs, 'adj_endure')
-s_adj_endure_fill_no_zero, s_adj_endure_fill_no_zero_norm, s_rm_ewma_e = get_fill_ewma(s_adj_endure_fill, 0.4, 50)
-h4 = s_adj_endure_fill_no_zero_norm.plot(style='co', ax=ax2, legend=False, markersize=3)
-h6 = s_rm_ewma_e.plot(style='c-', ax=ax2, legend=False)
+s_adj_endure_fill_no_zero, s_adj_endure_fill_no_zero_norm, s_rm_ewma_e, s_rm_ewma_es = get_fill_ewma(s_adj_endure_fill, 0.4, 50)
+#h4 = s_adj_endure_fill_no_zero_norm.plot(style='co', ax=ax2, legend=False, markersize=3)
+h4 = s_adj_endure_fill_no_zero.plot(style='co', ax=ax2, legend=False, markersize=3)
+h6 = s_rm_ewma_es.plot(style='c-', ax=ax2, legend=False)
 
-plot_inuries( df_injuries, s_rm_ewma_e.max(), ax2)
+plot_inuries( df_injuries, s_rm_ewma_es.max(), ax2)
 
 ax2.set_ylabel("Endurance")
 ax2.grid(True)
@@ -290,18 +295,15 @@ s_top_means = pd.Series(top_means)
 #---
 df_top_means = pd.DataFrame({ 'Date':s_top_dates, 'Top_Means':s_top_means})
 s_top_means_fill = dates_fill(df_top_means, 'Top_Means')
-s_top_means_fill_no_zero, s_top_fill_no_zero_norm, s_top_means_rm_ewma = get_fill_ewma(s_top_means_fill, 0.5, 50)
-s_top_means_rm_ewma += s_top_means.min() -s_top_means_rm_ewma.min()
-#---
-
-
+s_top_means_fill_no_zero, s_top_fill_no_zero_norm, s_top_means_rm_ewma, s_top_means_rm_ewma_s = get_fill_ewma(s_top_means_fill, 0.5, 50)
+#s_top_means_rm_ewma += s_top_means.min() -s_top_means_rm_ewma.min()
 #----------------------------------
 ax4 = plt.subplot(4,1,4)
 #----------------------------------
 #h8 = ax4.plot(s_top_dates, s_top_means, 'co', markersize=3) #, legend=False)
 #h9= s_rm_ewma.plot(style='c-', ax=ax4, legend=False)
 h8 = s_top_means_fill_no_zero.plot(style='co', ax=ax4, legend=False, markersize=3)
-h9 = s_top_means_rm_ewma.plot(style='c-', ax=ax4, legend=False)
+h9 = s_top_means_rm_ewma_s.plot(style='c-', ax=ax4, legend=False)
 
 plot_inuries( df_injuries, s_top_means.max(), ax4)
 #plot_inuries( df_injuries, 13.0, ax4)
@@ -324,13 +326,13 @@ if platform.system() != 'Darwin':
 plt.show()
 
 
-#NumUniqueDates = df_sent.Date.unique().shape[0] 
-NumUniqueDates = pd.Series(s_Date).unique().shape[0] 
-N = s_Date.shape[0]
-
 #s_90p_sent = df_sent.groupby('Date')['Grade'].aggregate(lambda x: (np.percentile(x,90)) )
 s_Date = df_sent.Date.values
 s_Grade = df_sent.Grade.values
+
+#NumUniqueDates = df_sent.Date.unique().shape[0] 
+NumUniqueDates = pd.Series(s_Date).unique().shape[0] 
+N = s_Date.shape[0]
 
 #Append an extra bogus day, so the plot limits work out OK
 s_Date = np.append(s_Date, s_Date[-1] +np.timedelta64(1, 'D'))

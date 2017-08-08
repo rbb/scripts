@@ -17,7 +17,6 @@ import urllib2
 
 # https://trinket.io/python as a possible way to do graphs online/mobile (only has matplotlib support, no pandas)
 
-# TODO: Plot top 4 sends in a day
 # TODO: Plot intensity^2 method from Ben
 
 from os.path import expanduser
@@ -309,7 +308,7 @@ plot_inuries( df_injuries, s_top_means.max(), ax4)
 #plot_inuries( df_injuries, 13.0, ax4)
 
 ax4.set_ylabel("Top 4 Difficulty")
-#ax4.set_ylim(0, s_top_means.max())
+ax4.set_ylim(6, np.round(s_top_means_fill_no_zero.max() +0.5))
 ax4.grid(True)
 
 

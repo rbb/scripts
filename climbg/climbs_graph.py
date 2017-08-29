@@ -42,19 +42,27 @@ df_injuries = xl.parse('Injuries')
 #      Probably keep the "grade" at the current levels, and reduce the 
 #      adj_difficulty lower, since it feeds into the "load" calculation.
 
+#-----------------------------------------------
+def print_full(x):
+#-----------------------------------------------
+    pd.set_option('display.max_rows', len(x))
+    print(x)
+    pd.reset_option('display.max_rows')
 
 #-----------------------------------------------
 def calc_adj_difficulty(row):
     """Create an adjusted difficulty, based on grade and belay type"""
 #-----------------------------------------------
-    adj = 1.0
+    adj = 1.0 # 'f' = follow, adj=1;  'l' = lead, adj=1
     belay = row['Belay'].lower()
-    if belay == 'toprope' or belay == 'tr' or belay == 'none':
-        adj = 0.85
-    elif belay == 'autobelay' or belay == 'ab' or belay == 'auto':
-        adj = 0.7
-    # 'f' = follow, adj=1
-    # 'l' = lead, adj=1
+    if belay == 'autobelay' or belay == 'ab' or belay == 'auto':
+        adj = 0.70
+    elif belay == 'toprope' or belay == 'tr' or belay == 'none':
+        adj = 0.80
+    elif belay == 'tr/l':
+        adj = 0.90
+    #elif belay == 'boulder' or belay == 'b':
+    #    adj = 0.8
     adj_grade = row['Grade'] * adj
     #print('Length row = ' +str(len(row)) + '  belay = ' +str(belay) +'   grade = ' + str(row['Grade']) +'   adj_grade = ' +str(adj_grade) )
     return adj_grade
@@ -64,7 +72,11 @@ def calc_adj_difficulty(row):
 def calc_adj_load(row):
     """Create an adjusted load, based on % sent, and adjusted difficulty(grade and belay type)"""
 #-----------------------------------------------
-    return float(row['Send'] /100.0) * row['adj_difficulty']
+    belay = row['Belay'].lower()
+    if belay == 'boulder' or belay == 'b':
+        return float(row['Send'] /100.0) * row['adj_difficulty'] * 0.75
+    else:
+        return float(row['Send'] /100.0) * row['adj_difficulty']
 
 #-----------------------------------------------
 #def calc_adj_endure(row, median = 0):
@@ -79,7 +91,11 @@ def calc_adj_endure(row):
     rest_mult = math.log10(rest_mult)
     rest_mult = min(rest_mult, 2)
     rest_mult = min(2-rest_mult, 2)
-    endure = float(row['Send'] /100.0) * row['adj_difficulty']  * rest_mult
+    belay = row['Belay'].lower()
+    if belay == 'boulder' or belay == 'b':
+        endure = float(row['Send'] /100.0) * row['adj_difficulty']  * rest_mult * 0.3
+    else:
+        endure = float(row['Send'] /100.0) * row['adj_difficulty']  * rest_mult
     #if median > 0:
     endure = endure * (row['Bolts'] / bolts_median)
     return endure
@@ -226,20 +242,23 @@ ax1 = plt.subplot(4,1,1)
 ax1.plot(df_climbs.Date, df_climbs.Grade, 'o', markersize=2, color='green')
 #h4=df_sent.Grade.plot(style='co', ax=ax1, legend=False, markersize=1)
 
-s_mean=df_climbs.groupby('Date')['Grade'].mean()
-s_median=df_climbs.groupby('Date')['Grade'].median()
-s_min=df_climbs.groupby('Date')['Grade'].min()
-s_max=df_climbs.groupby('Date')['Grade'].max()
+#plot_difficulty = 'Grade'
+plot_difficulty = 'adj_difficulty'
+s_mean=df_climbs.groupby('Date')[plot_difficulty].mean()
+s_median=df_climbs.groupby('Date')[plot_difficulty].median()
+s_min=df_climbs.groupby('Date')[plot_difficulty].min()
+s_max=df_climbs.groupby('Date')[plot_difficulty].max()
 h2=s_max.plot(style='g-', ax=ax1, legend=False)
 
-s_max_sent=df_sent.groupby('Date')['Grade'].max()
+s_max_sent=df_sent.groupby('Date')[plot_difficulty].max()
 h3=s_max_sent.plot(style='c-', ax=ax1, legend=False)
 
 plot_inuries( df_injuries, df_climbs.Grade.max(), ax1)
 
 h2.set_ylabel("Max Difficulty")
 ax1.set_xticklabels([])
-h2.set_ylim(7.5, 13.0)
+h2.set_ylim(7.0, 13.0)
+h2.set_yticks([7,8,9,10,11,12,13])
 h2.grid(True)
 
 
@@ -252,7 +271,7 @@ ax2 = plt.subplot(4,1,2)
 s_adj_endure_fill = dates_fill( df_climbs, 'adj_endure')
 s_adj_endure_fill_no_zero, s_adj_endure_fill_no_zero_norm, s_rm_ewma_e, s_rm_ewma_es = get_fill_ewma(s_adj_endure_fill, 0.4, 50)
 #h4 = s_adj_endure_fill_no_zero_norm.plot(style='co', ax=ax2, legend=False, markersize=3)
-h4 = s_adj_endure_fill_no_zero.plot(style='co', ax=ax2, legend=False, markersize=3)
+h4 = s_adj_endure_fill_no_zero.plot(style='go', ax=ax2, legend=False, markersize=3)
 h6 = s_rm_ewma_es.plot(style='c-', ax=ax2, legend=False)
 
 plot_inuries( df_injuries, s_rm_ewma_es.max(), ax2)
@@ -264,7 +283,7 @@ ax2.set_xticklabels([])
 #----------------------------------
 ax3 = plt.subplot(4,1,3)
 #----------------------------------
-s_count = df_climbs.groupby('Date')['Grade'].count()
+s_count = df_climbs.groupby('Date')[plot_difficulty].count()   #TODO: only count boulders as 25%-50% ???
 h5=s_count.plot(style='o', ax=ax3, legend=False, markersize=3)
 N_window=5
 if getattr(s_count, "rolling", None):
@@ -286,7 +305,7 @@ top_means = []
 top_dates = []
 for ge in gbd:
     top_dates.append( ge[0] )
-    series = ge[1]['Grade'].sort_values(ascending=False)
+    series = ge[1][plot_difficulty].sort_values(ascending=False)
     top_means.append( series[0:4].mean() )   # Note: this appears to work even when the series is shorter than 4 elements
 s_top_dates = pd.Series(top_dates)
 s_top_means = pd.Series(top_means)
@@ -301,14 +320,16 @@ ax4 = plt.subplot(4,1,4)
 #----------------------------------
 #h8 = ax4.plot(s_top_dates, s_top_means, 'co', markersize=3) #, legend=False)
 #h9= s_rm_ewma.plot(style='c-', ax=ax4, legend=False)
-h8 = s_top_means_fill_no_zero.plot(style='co', ax=ax4, legend=False, markersize=3)
+h8 = s_top_means_fill_no_zero.plot(style='go', ax=ax4, legend=False, markersize=3)
 h9 = s_top_means_rm_ewma_s.plot(style='c-', ax=ax4, legend=False)
 
 plot_inuries( df_injuries, s_top_means.max(), ax4)
 #plot_inuries( df_injuries, 13.0, ax4)
 
 ax4.set_ylabel("Top 4 Difficulty")
-ax4.set_ylim(6, np.round(s_top_means_fill_no_zero.max() +0.5))
+#ax4.set_ylim(6, np.round(s_top_means_fill_no_zero.max() +0.5))
+ax4.set_ylim(7.0, 13.0)
+ax4.set_yticks([7,8,9,10,11,12,13])
 ax4.grid(True)
 
 

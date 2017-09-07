@@ -92,13 +92,21 @@ def calc_adj_endure(row):
     rest_mult = min(rest_mult, 2)
     rest_mult = min(2-rest_mult, 2)
     belay = row['Belay'].lower()
-    if belay == 'boulder' or belay == 'b':
-        endure = float(row['Send'] /100.0) * row['adj_difficulty']  * rest_mult * 0.3
-    else:
-        endure = float(row['Send'] /100.0) * row['adj_difficulty']  * rest_mult
-    #if median > 0:
+    endure = float(row['Send'] /100.0) * row['adj_difficulty']  * rest_mult
+
+    # Adjust for boulder problems
+    #
+    # One way would be to force it like below:
+    #if belay == 'boulder' or belay == 'b':
+    #    # 0.3 seemed like too much - RBB 2017-09-07
+    #    endure = endure * 0.24
+    #
+    # The other way to handle it, is to adjust the boulder_endurance_factor, which
+    # results in fewer "Bolts" per climb. This is probably a more consistent way
+    # to think about the adjustment.
     endure = endure * (row['Bolts'] / bolts_median)
     return endure
+
 
 #------------------------------------------------------------
 def get_fill_ewma(s_in, alpha = 0.4, N_window = 50):
@@ -183,13 +191,14 @@ del df_climbs['Notes']
 
 # Fill in lengths
 bolts_median = df_climbs.Bolts.median()
-df_climbs['Bolts'].fillna(bolts_median, inplace=True)
+boulder_endurance_factor = 9
 for v in bouldering_lut.keys():
     #print 'Processing boulder lut -> bolts for ' +v
-    df_climbs.loc[df_climbs['Grade'] == v,         'Bolts'] = bolts_median/2
-    df_climbs.loc[df_climbs['Grade'] == v.upper(), 'Bolts'] = bolts_median/2
+    df_climbs.loc[df_climbs['Grade'] == v,         'Bolts'] = bolts_median/boulder_endurance_factor
+    df_climbs.loc[df_climbs['Grade'] == v.upper(), 'Bolts'] = bolts_median/boulder_endurance_factor
     df_climbs.loc[df_climbs['Grade'] == v,         'Belay'] = 'B'
     df_climbs.loc[df_climbs['Grade'] == v.upper(), 'Belay'] = 'B'
+df_climbs['Bolts'].fillna(bolts_median, inplace=True)
 df_climbs_bolts = df_climbs
 #del df_climbs_bolts['Rest (s)']
 #del df_climbs_bolts['Duration (s)']
@@ -283,7 +292,7 @@ ax2.set_xticklabels([])
 #----------------------------------
 ax3 = plt.subplot(4,1,3)
 #----------------------------------
-s_count = df_climbs.groupby('Date')[plot_difficulty].count()   #TODO: only count boulders as 25%-50% ???
+s_count = df_climbs.groupby('Date')[plot_difficulty].count()   #Note: this is different than endurance - on purpose. So, lots of bouldering in a day = high count.
 h5=s_count.plot(style='o', ax=ax3, legend=False, markersize=3)
 N_window=5
 if getattr(s_count, "rolling", None):

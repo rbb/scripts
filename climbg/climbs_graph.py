@@ -69,14 +69,14 @@ def calc_adj_difficulty(row):
 
 #TODO: figure out a way to do df.apply(mult_cols, axis=1), with column name arguments added
 #-----------------------------------------------
-def calc_adj_load(row):
-    """Create an adjusted load, based on % sent, and adjusted difficulty(grade and belay type)"""
+#def calc_adj_load(row):
+#    """Create an adjusted load, based on % sent, and adjusted difficulty(grade and belay type)"""
 #-----------------------------------------------
-    belay = row['Belay'].lower()
-    if belay == 'boulder' or belay == 'b':
-        return float(row['Send'] /100.0) * row['adj_difficulty'] * 0.75
-    else:
-        return float(row['Send'] /100.0) * row['adj_difficulty']
+#    belay = row['Belay'].lower()
+#    if belay == 'boulder' or belay == 'b':
+#        return float(row['Send'] /1.0) * row['adj_difficulty'] * 0.75
+#    else:
+#        return float(row['Send'] /1.0) * row['adj_difficulty']
 
 #-----------------------------------------------
 #def calc_adj_endure(row, median = 0):
@@ -91,12 +91,12 @@ def calc_adj_endure(row):
     rest_mult = math.log10(rest_mult)
     rest_mult = min(rest_mult, 2)
     rest_mult = min(2-rest_mult, 2)
-    belay = row['Belay'].lower()
-    endure = float(row['Send'] /100.0) * row['adj_difficulty']  * rest_mult
+    endure = float(row['Send'] /1.0) * row['adj_difficulty']  * rest_mult
 
     # Adjust for boulder problems
     #
     # One way would be to force it like below:
+    #belay = row['Belay'].lower()
     #if belay == 'boulder' or belay == 'b':
     #    # 0.3 seemed like too much - RBB 2017-09-07
     #    endure = endure * 0.24
@@ -227,18 +227,18 @@ df_climbs['Sits'].fillna(0, inplace=True)
 # df_climbs.groupby('Date')['Grade'].sum()
 # df_climbs.groupby('Date')['Grade'].mean()
 
-df_climbs['Send'].fillna(100, inplace=True)            # assume all empty entries are 100% complete
+df_climbs['Send'].fillna(1.0, inplace=True)            # assume all empty entries are 100% complete
 # DNF = Did Not Finish
 # S = Sent
 # OS = On Sight
 # RP = Red Point
-df_climbs = df_climbs.replace({'Send': {'DNF': 50, 'S':100, 'OS':100, 'RP':100 }  }) # assume all DNF entries are 50% complete
+df_climbs = df_climbs.replace({'Send': {'DNF': 0.5, 'S':1, 'OS':1, 'RP':1 }  }) # assume all DNF entries are 50% complete
 
-df_climbs['adj_load'] = df_climbs.apply(calc_adj_load, axis=1)
+#df_climbs['adj_load'] = df_climbs.apply(calc_adj_load, axis=1)
 df_climbs['adj_endure'] = df_climbs.apply(calc_adj_endure, axis=1)
 
 
-df_sent = df_climbs[(df_climbs['Send']==100) & (df_climbs['Sits']==0)]
+df_sent = df_climbs[(df_climbs['Send']==1) & (df_climbs['Sits']==0)]
 
 #----------------------------------
 fig1 =plt.figure(1)
@@ -275,13 +275,16 @@ h2.grid(True)
 ax2 = plt.subplot(4,1,2)
 #----------------------------------
 #s_adj_load_fill = dates_fill( df_climbs, 'adj_load')
-#s_adj_load_fill_no_zero, s_rm_ewma = get_fill_ewma(s_adj_load_fill, alpha = 0.4, N_window = 50)
+#s_adj_load_fill_no_zero,   s_adj_load_fill_no_zero_norm,   s_rml_ewma_e, s_rml_ewma_es = get_fill_ewma(s_adj_load_fill, alpha = 0.4, N_window = 50)
+#h14 = s_adj_load_fill_no_zero.plot(style='mo', ax=ax2, legend=False, markersize=3)
+#h16 = s_rml_ewma_es.plot(style='r-', ax=ax2, legend=False)
 
 s_adj_endure_fill = dates_fill( df_climbs, 'adj_endure')
 s_adj_endure_fill_no_zero, s_adj_endure_fill_no_zero_norm, s_rm_ewma_e, s_rm_ewma_es = get_fill_ewma(s_adj_endure_fill, 0.4, 50)
 #h4 = s_adj_endure_fill_no_zero_norm.plot(style='co', ax=ax2, legend=False, markersize=3)
 h4 = s_adj_endure_fill_no_zero.plot(style='go', ax=ax2, legend=False, markersize=3)
 h6 = s_rm_ewma_es.plot(style='c-', ax=ax2, legend=False)
+
 
 plot_inuries( df_injuries, s_rm_ewma_es.max(), ax2)
 
@@ -444,8 +447,8 @@ fig2 =plt.figure(2)
 #----------------------------------
 plt.clf()
 ax1 = plt.subplot(4,1,1)
-#TODO: Only used climbs with send = 100 and sits =0 for the 90 percentile
-#df_sent = df_climbs[(df_climbs['Send']==100) & (df_climbs['Sits']==0)]
+#TODO: Only used climbs with send = 1 and sits =0 for the 90 percentile
+#df_sent = df_climbs[(df_climbs['Send']==1) & (df_climbs['Sits']==0)]
 s_90p_sent = df_sent.groupby('Date')['Grade'].aggregate(lambda x: (np.percentile(x,90)) )
 s_90p_all = df_climbs.groupby('Date')['Grade'].aggregate(lambda x: (np.percentile(x,90)) )
 h1=s_max.plot(kind='area', color='0.85', ax=ax1, legend=True, label="Max All")
@@ -537,7 +540,7 @@ fig4 = plt.figure(4)
 plt.clf()
 ax1 = plt.subplot(1,1,1)
 #h21=df_named_climbs.groupby('Name')['Name'].count().plot(style='o-')
-# TODO: limit df_by_attempts to only climbs where at least one of the attempts was Send<100 or Sits>0
+# TODO: limit df_by_attempts to only climbs where at least one of the attempts was Send<1 or Sits>0
 df_by_attempts = pd.DataFrame( df_named_climbs['Name'].value_counts() )
 df_by_attempts['Name'] = df_by_attempts.index
 df_by_attempts.columns = ['Attempts', 'Name']
@@ -609,7 +612,7 @@ plt.show()
 
 
 
-df_dnf=df_climbs[df_climbs['Send']!=100]
+df_dnf=df_climbs[df_climbs['Send']!=1]
 df_dnf_grade_hist=pd.DataFrame(df_dnf['Grade'].value_counts())
 df_dnf_grade_hist['Grade'] = df_dnf_grade_hist.index
 df_dnf_grade_hist.columns = ['bin_sums', 'Grade']

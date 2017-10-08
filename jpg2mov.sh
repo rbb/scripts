@@ -17,5 +17,5 @@ echo "Creating $mov_name"
 
 # Prores output 41 seconds for 86 images
 # https://olitee.com/2014/02/ffmpeg-convert-dcp-quicktime/
-time ffmpeg -f image2 -pattern_type glob -i "*.jpg" -r 30 -s 1920x1080 -c:v prores_ks -pix_fmt yuv444p10le "${mov_name}.mov"
+time nice ffmpeg -f image2 -pattern_type glob -i "*.jpg" -r 30 -s 1920x1080 -c:v prores_ks -pix_fmt yuv444p10le "${mov_name}.mov"
 

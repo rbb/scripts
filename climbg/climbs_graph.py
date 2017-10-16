@@ -275,9 +275,43 @@ h2.set_ylim(7.0, 13.0)
 h2.set_yticks([7,8,9,10,11,12,13])
 h2.grid(True)
 
+#---------------------------------------------------------------------
+gbd = df_sent.groupby(['Date'])
+top_means = []
+top_dates = []
+for ge in gbd:
+    top_dates.append( ge[0] )
+    series = ge[1][plot_difficulty].sort_values(ascending=False)
+    top_means.append( series[0:4].mean() )   # Note: this appears to work even when the series is shorter than 4 elements
+s_top_dates = pd.Series(top_dates)
+s_top_means = pd.Series(top_means)
+
+#---
+df_top_means = pd.DataFrame({ 'Date':s_top_dates, 'Top_Means':s_top_means})
+s_top_means_fill = dates_fill(df_top_means, 'Top_Means')
+s_top_means_fill_no_zero, s_top_fill_no_zero_norm, s_top_means_rm_ewma, s_top_means_rm_ewma_s = get_fill_ewma(s_top_means_fill, 0.5, 50)
+#s_top_means_rm_ewma += s_top_means.min() -s_top_means_rm_ewma.min()
+#----------------------------------
+ax4 = plt.subplot(4,1,2)
+#----------------------------------
+#h8 = ax4.plot(s_top_dates, s_top_means, 'co', markersize=3) #, legend=False)
+#h9= s_rm_ewma.plot(style='c-', ax=ax4, legend=False)
+h8 = s_top_means_fill_no_zero.plot(style='go', ax=ax4, legend=False, markersize=3)
+h9 = s_top_means_rm_ewma_s.plot(style='c-', ax=ax4, legend=False)
+
+plot_inuries( df_injuries, s_top_means.max(), ax4)
+#plot_inuries( df_injuries, 13.0, ax4)
+
+ax4.set_ylabel("Top 4 Difficulty")
+#ax4.set_ylim(6, np.round(s_top_means_fill_no_zero.max() +0.5))
+ax4.set_ylim(7.0, 13.0)
+ax4.set_yticks([7,8,9,10,11,12,13])
+ax4.grid(True)
+ax4.set_xticklabels([])
+
 
 #----------------------------------
-ax2 = plt.subplot(4,1,2)
+ax2 = plt.subplot(4,1,3)
 #----------------------------------
 #s_adj_load_fill = dates_fill( df_climbs, 'adj_load')
 #s_adj_load_fill_no_zero,   s_adj_load_fill_no_zero_norm,   s_rml_ewma_e, s_rml_ewma_es = get_fill_ewma(s_adj_load_fill, alpha = 0.4, N_window = 50)
@@ -298,7 +332,7 @@ ax2.grid(True)
 ax2.set_xticklabels([])
 
 #----------------------------------
-ax3 = plt.subplot(4,1,3)
+ax3 = plt.subplot(4,1,4)
 #----------------------------------
 s_count = df_climbs.groupby('Date')[plot_difficulty].count()   #Note: this is different than endurance - on purpose. So, lots of bouldering in a day = high count.
 h5=s_count.plot(style='o', ax=ax3, legend=False, markersize=3)
@@ -312,42 +346,10 @@ h7= s_rm_count.plot(style='g-', ax=ax3, legend=False)
 plot_inuries( df_injuries, s_count.max(), ax3)
 
 
-ax3.set_xticklabels([])
+#ax3.set_xticklabels([])
 h5.set_ylabel("# climbs/\nday")
 h5.grid(True)
 
-#---------------------------------------------------------------------
-gbd = df_sent.groupby(['Date'])
-top_means = []
-top_dates = []
-for ge in gbd:
-    top_dates.append( ge[0] )
-    series = ge[1][plot_difficulty].sort_values(ascending=False)
-    top_means.append( series[0:4].mean() )   # Note: this appears to work even when the series is shorter than 4 elements
-s_top_dates = pd.Series(top_dates)
-s_top_means = pd.Series(top_means)
-
-#---
-df_top_means = pd.DataFrame({ 'Date':s_top_dates, 'Top_Means':s_top_means})
-s_top_means_fill = dates_fill(df_top_means, 'Top_Means')
-s_top_means_fill_no_zero, s_top_fill_no_zero_norm, s_top_means_rm_ewma, s_top_means_rm_ewma_s = get_fill_ewma(s_top_means_fill, 0.5, 50)
-#s_top_means_rm_ewma += s_top_means.min() -s_top_means_rm_ewma.min()
-#----------------------------------
-ax4 = plt.subplot(4,1,4)
-#----------------------------------
-#h8 = ax4.plot(s_top_dates, s_top_means, 'co', markersize=3) #, legend=False)
-#h9= s_rm_ewma.plot(style='c-', ax=ax4, legend=False)
-h8 = s_top_means_fill_no_zero.plot(style='go', ax=ax4, legend=False, markersize=3)
-h9 = s_top_means_rm_ewma_s.plot(style='c-', ax=ax4, legend=False)
-
-plot_inuries( df_injuries, s_top_means.max(), ax4)
-#plot_inuries( df_injuries, 13.0, ax4)
-
-ax4.set_ylabel("Top 4 Difficulty")
-#ax4.set_ylim(6, np.round(s_top_means_fill_no_zero.max() +0.5))
-ax4.set_ylim(7.0, 13.0)
-ax4.set_yticks([7,8,9,10,11,12,13])
-ax4.grid(True)
 
 
 #---------------------------------------------------------------------

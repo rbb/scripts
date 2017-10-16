@@ -51,7 +51,10 @@ def print_full(x):
 
 #-----------------------------------------------
 def calc_adj_difficulty(row):
-    """Create an adjusted difficulty, based on grade and belay type"""
+    """Create an adjusted difficulty, based on grade and belay type.
+       The idea is that a sport lead is the base reference (ie multiplier
+       is 1.0. Then, scale all climbs by the belay type"
+    """
 #-----------------------------------------------
     adj = 1.0 # 'f' = follow, adj=1;  'l' = lead, adj=1
     belay = row['Belay'].lower()
@@ -59,7 +62,9 @@ def calc_adj_difficulty(row):
         adj = 0.70
     elif belay == 'toprope' or belay == 'tr' or belay == 'none':
         adj = 0.80
-    elif belay == 'tr/l':
+    elif belay == 'trad' or belay == 'tl':
+        adj = 1.10
+    elif belay == 'tr/l' or belay == 'trl':  # Belayed on Toprope, but practice lead clips on separate rope
         adj = 0.90
     #elif belay == 'boulder' or belay == 'b':
     #    adj = 0.8
@@ -264,7 +269,7 @@ h3=s_max_sent.plot(style='c-', ax=ax1, legend=False)
 
 plot_inuries( df_injuries, df_climbs.Grade.max(), ax1)
 
-h2.set_ylabel("Max Difficulty")
+h2.set_ylabel("Max Difficulty Attempted")
 ax1.set_xticklabels([])
 h2.set_ylim(7.0, 13.0)
 h2.set_yticks([7,8,9,10,11,12,13])

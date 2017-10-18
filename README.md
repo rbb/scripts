@@ -14,6 +14,9 @@ These are some scripts that I use at home or work. Mostly related to processing 
 - `ptcb.sh`: OS X bash script to convert the contents of the clipboard to plain text.
 - `pingplot.sh`: Use gnuplot to plot ping results. uses pingplot.plt
 - `pingplot.plt`: gnuplot file for use with pingplot.sh
+- `gp_ping.sh`: Another attempt at plotting pings. This one doesn't need a separate
+             `.plt` file. But it does call an external program (`open`) to view a PNG
+             of the results. This prevents gnuplot from messing with mouse selection.
 - `iwlist_csv.sh`: convert the output of a `iwlist scan` command into CSV format
 - `iwlist_scan.txt`: an example output of `iwlist scan` output
 - `pkglist`: Attempt to list all the (debian/apt) packages that are installed, as

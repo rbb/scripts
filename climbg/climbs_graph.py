@@ -270,7 +270,7 @@ ax1 = plt.subplot(4,1,1)
 #----------------------------------
 #plt.plot(df_climbs['Date'], df_climbs['Grade'])
 #df_climbs.plot(x='Date', y='Grade', marker='o', linestyle='none', markersize=1, ax=ax1, legend=False, color='darkred')
-ax1.plot(df_climbs.Date, df_climbs.Grade, 'o', markersize=2, color='green')
+#ax1.plot(df_climbs.Date, df_climbs.Grade, 'o', markersize=2, color='green')
 #h4=df_sent.Grade.plot(style='co', ax=ax1, legend=False, markersize=1)
 
 #plot_difficulty = 'Grade'

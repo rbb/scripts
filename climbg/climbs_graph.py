@@ -56,20 +56,37 @@ def calc_adj_difficulty(row):
        is 1.0. Then, scale all climbs by the belay type"
     """
 #-----------------------------------------------
-    adj = 1.0 # 'f' = follow, adj=1;  'l' = lead, adj=1
+    #adj = 1.0 # 'f' = follow, adj=1;  'l' = lead, adj=1
+    #belay = row['Belay'].lower()
+    #if belay == 'autobelay' or belay == 'ab' or belay == 'auto':
+    #    adj = 0.70
+    #elif belay == 'toprope' or belay == 'tr' or belay == 'none':
+    #    adj = 0.80
+    #elif belay == 'trad' or belay == 'tl':
+    #    adj = 1.10
+    #elif belay == 'tr/l' or belay == 'trl':  # Belayed on Toprope, but practice lead clips on separate rope
+    #    adj = 0.90
+    ##elif belay == 'boulder' or belay == 'b':
+    ##    adj = 0.8
+    #adj_grade = row['Grade'] * adj
+    ##print('Length row = ' +str(len(row)) + '  belay = ' +str(belay) +'   grade = ' + str(row['Grade']) +'   adj_grade = ' +str(adj_grade) )
+
+
+    adj = 0.0 # 'f' = follow, adj=1;  'l' = lead, adj=1
     belay = row['Belay'].lower()
     if belay == 'autobelay' or belay == 'ab' or belay == 'auto':
-        adj = 0.70
+        adj = -1.0
     elif belay == 'toprope' or belay == 'tr' or belay == 'none':
-        adj = 0.80
+        adj = -0.5
     elif belay == 'trad' or belay == 'tl':
-        adj = 1.10
+        adj = +0.5
     elif belay == 'tr/l' or belay == 'trl':  # Belayed on Toprope, but practice lead clips on separate rope
-        adj = 0.90
+        adj = -0.25
     #elif belay == 'boulder' or belay == 'b':
     #    adj = 0.8
-    adj_grade = row['Grade'] * adj
+    adj_grade = row['Grade'] + adj
     #print('Length row = ' +str(len(row)) + '  belay = ' +str(belay) +'   grade = ' + str(row['Grade']) +'   adj_grade = ' +str(adj_grade) )
+
     return adj_grade
 
 #TODO: figure out a way to do df.apply(mult_cols, axis=1), with column name arguments added

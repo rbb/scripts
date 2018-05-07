@@ -14,7 +14,7 @@
 # some some basic utilities
 package_list=( adduser samba openssh-server sshfs vim-gtk3 curl inkscape) #smbfs 
 package_list+=(synaptic aptitude)
-package_list+=(evince)
+package_list+=(kdiff3)
 
 # Some development utilities
 package_list+=(automake expect cscope git)

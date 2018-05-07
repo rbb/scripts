@@ -16,13 +16,14 @@ cp_etc_target () {
          echo "$rp_name exists backing upto /etc/$name.orig"
          sudo mv "$rp_name" "/etc/$name.orig"
    fi
-   sudo cp -apr "/home/data_ext/etc_backup/$name" "/etc/"
-   echo ""
+   npath=$(echo "${name%/*}")
+   echo "Copying /home/data_ext/etc_backup/$name to /etc/$npath"
+   sudo cp -aprv "/home/data_ext/etc_backup/$name" "/etc/$npath"
 }
 
 if [ -d "/home/data_ext/etc_backup" ]; then
-   #cp_etc_target "fstab"
+   cp_etc_target "fstab"
    cp_etc_target "hosts"
-   #cp_etc_target "network/interfaces"
+   cp_etc_target "network/interfaces"
 fi
 

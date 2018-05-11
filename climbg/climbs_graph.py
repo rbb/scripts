@@ -30,6 +30,8 @@ xl = pd.ExcelFile(filename);
 #socket = urllib2.urlopen(urlname)
 #xl = pd.ExcelFile(socket);
 
+fig_dpi = 256
+
 sheetname='Log'
 df_climbs = xl.parse(sheetname)
 df_lut = xl.parse('Lookup_Tables')
@@ -368,6 +370,7 @@ h5.set_ylabel("# climbs/\nday")
 h5.grid(True)
 
 
+fig1.savefig(home +'/Dropbox/climbs_fig1.png', dpi = fig_dpi)
 
 #---------------------------------------------------------------------
 
@@ -459,8 +462,10 @@ yt = np.append(gradeBins[::-1], [gradeBins[0] +0.5, gradeBins[0] +1])
 plt.axis('tight')
 locs, labels = plt.xticks()
 plt.setp(labels, rotation=45)
+fig2.savefig(home +'/Dropbox/climbs_fig2.png', dpi = fig_dpi)
 plt.show()
 #TODO: Group by N days, or by weeks because we're really interested in the averages, rather than the daily results
+
 
 sys.exit()
 #exit()

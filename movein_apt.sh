@@ -37,3 +37,5 @@ package_list+=( ethtool mtr-tiny filezilla fping net-tools)
 echo "Installing packages: ${package_list[@]}"
 sudo apt install ${package_list[@]}      
 
+sudo add-apt-repository ppa:alessandro-strada/ppa
+sudo apt install google-drive-ocamlfuse

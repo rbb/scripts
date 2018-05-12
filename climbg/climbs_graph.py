@@ -7,6 +7,7 @@ import platform
 import math
 from climbs_lookup import *
 import urllib2
+#import ftplib
 
 #%matplotlib
 
@@ -109,9 +110,17 @@ def calc_adj_endure(row):
 #-----------------------------------------------
     # rest_mult curve based on the following Octave code:
     #x=[1:120]; y=2-min(2,log10((x.^2)/400)); plot(x,min(y,2)); grid on
-    rest_mult = (math.pow(row['Rest (s)'],2.0))/400.0
-    if rest_mult < 1:
-        rest_mult = 1
+    #rest_mult = (math.pow(row['Rest (s)'],2.0))/400.0
+    #rest_mult = max(1.0, rest_mult)
+    #rest_mult = math.log10(rest_mult)
+    #rest_mult = min(rest_mult, 2)
+    #rest_mult = min(2-rest_mult, 2)
+    #endure = float(row['Send'] /1.0) * row['adj_difficulty']  * rest_mult
+
+    # rest_mult curve based on the following Octave code:
+    #x=[1:120]; y=2-min(2,log10((x.^1.0)/12)); plot(x,min(y,2)); grid on
+    rest_mult = (math.pow(row['Rest (s)'],1.0))/10.0
+    rest_mult = max(0.25, rest_mult)
     rest_mult = math.log10(rest_mult)
     rest_mult = min(rest_mult, 2)
     rest_mult = min(2-rest_mult, 2)
@@ -131,31 +140,57 @@ def calc_adj_endure(row):
     endure = endure * (row['Bolts'] / bolts_median)
     return endure
 
+#------------------------------------------------------------
+def norm(s_in):
+    """scale from 0 to 1.0"""
+#------------------------------------------------------------
+    s = s_in - s_in.min() 
+    n = s/ (s.max() - s.min())
+    return n
+
+#------------------------------------------------------------
+def scale(n, s):
+    """scale a normalized series ([0.0,1.0])to input data"""
+#------------------------------------------------------------
+    r = s.max() - s.min()
+    o = n * r + s.min()
+    return o
 
 #------------------------------------------------------------
 def get_fill_ewma(s_in, alpha = 0.4, N_window = 50):
+    """First return value is a series with all zero values removed.
+
+       The second returned value is a mix of a rolling mean and an EWMA of the 
+       non-zero values. The mix is determined by alpha. 
+            alpha = 0.0 --> all rolling mean
+            alpha = 1.0 --> all EWMA
+       Note alpha must be between 0.0 and 1.0. All other values are invalid.
+
+       N_window determines the size of the window for the rolling mean and the EWMA
+   """
 #------------------------------------------------------------
-    # Note alpha = [0, 1]
 
+    #---- Non Zero Data
     s_fill_no_zero = s_in[s_in != 0]
-    s_fill_no_zero_norm = (s_in[s_in != 0] / (N_window / 1 +0) ) +0
-    if getattr(s_in, "rolling", None):
-        s_rm = (s_in.rolling(window=N_window,center=False).mean() /1) / s_fill_no_zero_norm.mean()
-    else:
-        s_rm = (pd.rolling_mean(s_in, N_window) / 1) / s_fill_no_zero_norm.mean()
+    s_fill_no_zero_norm = norm(s_fill_no_zero)
 
-    if getattr(s_in, "ewm", None):
-        s_ewma = s_in.ewm(ignore_na=False,span=N_window,min_periods=0,adjust=True).mean() / s_fill_no_zero_norm.mean()
-    else:
-        s_ewma = pd.ewma(s_in, span=N_window) / s_fill_no_zero_norm.mean()
 
-    s_rm_ewma =  ( s_ewma* alpha  +  s_rm * (1.0 - alpha) )  /2
-    #s_rm_ewma = s_rm_ewma.dropna()
+    #--- Rolling mean
+    s_rm = (pd.rolling_mean(s_in, N_window) / 1) / s_fill_no_zero_norm.mean()
+    s_rm_n = norm(s_rm)
 
-    s_rm_ewma_norm = s_rm_ewma / s_rm_ewma.max()
-    s_rm_ewma_scale = s_rm_ewma_norm * (s_fill_no_zero.max() - s_fill_no_zero.min())
-    s_rm_ewma_scale += s_fill_no_zero.min()
-    return s_fill_no_zero, s_fill_no_zero_norm, s_rm_ewma, s_rm_ewma_scale
+    #--- EWMA
+    s_ewma = pd.ewma(s_in, span=N_window) 
+    for n in range(3,0,-1):
+        # Since the first few values are artificially high, lets replace them.
+        s_ewma[n-1] = s_ewma[n]
+    s_ewma_n = norm(s_ewma)
+
+    #--- Mix, using the Alpha
+    s_alpha =  ( s_ewma_n* alpha  +  s_rm_n * (1.0 - alpha) )
+    s_alpha_scale = scale(s_alpha, s_fill_no_zero)
+
+    return s_fill_no_zero, s_alpha_scale
 
 #--------------------------------------------
 def dates_fill (df, col):
@@ -215,7 +250,7 @@ del df_climbs['Notes']
 
 # Fill in lengths
 bolts_median = df_climbs.Bolts.median()
-boulder_endurance_factor = 9
+boulder_endurance_factor = bolts_median * 3
 for v in bouldering_lut.keys():
     #print 'Processing boulder lut -> bolts for ' +v
     df_climbs.loc[df_climbs['Grade'] == v,         'Bolts'] = bolts_median/boulder_endurance_factor
@@ -307,24 +342,18 @@ s_top_means = pd.Series(top_means)
 
 #---
 df_top_means = pd.DataFrame({ 'Date':s_top_dates, 'Top_Means':s_top_means})
-s_top_means_fill = dates_fill(df_top_means, 'Top_Means')
-s_top_means_fill_no_zero, s_top_fill_no_zero_norm, s_top_means_rm_ewma, s_top_means_rm_ewma_s = get_fill_ewma(s_top_means_fill, 0.5, 50)
-#s_top_means_rm_ewma += s_top_means.min() -s_top_means_rm_ewma.min()
 #----------------------------------
 ax4 = plt.subplot(4,1,2)
 #----------------------------------
-#h8 = ax4.plot(s_top_dates, s_top_means, 'co', markersize=3) #, legend=False)
-#h9= s_rm_ewma.plot(style='c-', ax=ax4, legend=False)
-h8 = s_top_means_fill_no_zero.plot(style='go', ax=ax4, legend=False, markersize=3)
-h9 = s_top_means_rm_ewma_s.plot(style='c-', ax=ax4, legend=False)
-
+s_top_means_fill = dates_fill(df_top_means, 'Top_Means')
+s_top_means_fill_nz, s_top_means_fill_es = get_fill_ewma(s_top_means_fill, 0.0, 50)
+h8 = s_top_means_fill_nz.plot(style='go', ax=ax4, legend=False, markersize=3)
+h9 = s_top_means_fill_es.plot(style='c-', ax=ax4, legend=False)
 plot_inuries( df_injuries, s_top_means.max(), ax4)
-#plot_inuries( df_injuries, 13.0, ax4)
 
 ax4.set_ylabel("Top 4\nDifficulty")
-#ax4.set_ylim(6, np.round(s_top_means_fill_no_zero.max() +0.5))
-ax4.set_ylim(7.0, 13.0)
-ax4.set_yticks([7,8,9,10,11,12,13])
+ax4.set_ylim(5.0, 12.0)
+ax4.set_yticks(range(5,12))
 ax4.grid(True)
 ax4.set_xticklabels([])
 
@@ -332,19 +361,11 @@ ax4.set_xticklabels([])
 #----------------------------------
 ax2 = plt.subplot(4,1,3)
 #----------------------------------
-#s_adj_load_fill = dates_fill( df_climbs, 'adj_load')
-#s_adj_load_fill_no_zero,   s_adj_load_fill_no_zero_norm,   s_rml_ewma_e, s_rml_ewma_es = get_fill_ewma(s_adj_load_fill, alpha = 0.4, N_window = 50)
-#h14 = s_adj_load_fill_no_zero.plot(style='mo', ax=ax2, legend=False, markersize=3)
-#h16 = s_rml_ewma_es.plot(style='r-', ax=ax2, legend=False)
-
 s_adj_endure_fill = dates_fill( df_climbs, 'adj_endure')
-s_adj_endure_fill_no_zero, s_adj_endure_fill_no_zero_norm, s_rm_ewma_e, s_rm_ewma_es = get_fill_ewma(s_adj_endure_fill, 0.4, 50)
-#h4 = s_adj_endure_fill_no_zero_norm.plot(style='co', ax=ax2, legend=False, markersize=3)
-h4 = s_adj_endure_fill_no_zero.plot(style='go', ax=ax2, legend=False, markersize=3)
-h6 = s_rm_ewma_es.plot(style='c-', ax=ax2, legend=False)
-
-
-plot_inuries( df_injuries, s_rm_ewma_es.max(), ax2)
+s_adj_endure_fill_nz, s_adj_endure_fill_es = get_fill_ewma(s_adj_endure_fill, 0.0, 50)
+h4 = s_adj_endure_fill_nz.plot(style='go', ax=ax2, legend=False, markersize=3)
+h6 = s_adj_endure_fill_es.plot(style='c-', ax=ax2, legend=False)
+plot_inuries( df_injuries, s_adj_endure_fill_es.max(), ax2)
 
 ax2.set_ylabel("Endurance")
 ax2.grid(True)
@@ -383,7 +404,6 @@ if platform.system() != 'Darwin':
     fig1.set_size_inches(10,8,forward=True) # Works on ubuntu
 
 plt.show()
-
 
 #s_90p_sent = df_sent.groupby('Date')['Grade'].aggregate(lambda x: (np.percentile(x,90)) )
 s_Date = df_sent.Date.values
@@ -466,6 +486,25 @@ fig2.savefig(home +'/Dropbox/climbs_fig2.png', dpi = fig_dpi)
 plt.show()
 #TODO: Group by N days, or by weeks because we're really interested in the averages, rather than the daily results
 
+
+#TODO upload home +'/Dropbox/climbs_fig2.png' to russandbecky.org, via ftp
+
+#------------------------- DEBUG INFO ----------------------------------
+#bldrmask = (df_climbs['Date'] >= '2017-8-31') & (df_climbs['Date'] <= '2017-9-12')
+#print(df_climbs.loc[bldrmask].to_string())
+#
+#df_adj_endure_fill_nz = pd.DataFrame()
+#df_adj_endure_fill_nz['Date'] = pd.DataFrame(s_adj_endure_fill_nz_norm.index)
+#df_adj_endure_fill_nz['adj_endure'] = pd.DataFrame(s_adj_endure_fill_nz_norm.get_values())
+#nzbldrmask = (df_adj_endure_fill_nz['Date'] >= '2017-8-31') & (df_adj_endure_fill_nz['Date'] <= '2017-9-12')
+#print(df_adj_endure_fill_nz.loc[nzbldrmask].to_string())
+#
+#
+#def print_range(d, s):
+#    print(d +" " +str(s.min()) +" " +str(s.max()))
+#
+#print_range('s_top_means_fill_nz', s_top_means_fill_nz)
+#print_range('s_top_means_fill_es', s_top_means_fill_es)
 
 sys.exit()
 #exit()

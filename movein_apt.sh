@@ -20,6 +20,7 @@ package_list+=(kdiff3)
 package_list+=(automake expect cscope git)
 #package_list+=(automake expect cscope rabbitvcs-nautilus xxgdb ddd)
 package_list+=(python ipython winpdb pylint)
+package_list+=(python-numpy python-pandas python-matplotlib)
 
 # Some engineering utilities
 package_list+=(octave linsmith)

@@ -8,7 +8,7 @@ nprocs=${2:-'3'}
 # Convert all the CR2 files to jpg
 if command -v parallel &>/dev/null; then 
    #time nice parallel -j $nprocs ufraw-batch --out-type=jpg --exposure=$exposure -- *.CR2
-   time nice parallel -j $nprocs ufraw-batch --out-type=jpg --exposure=$exposure ::: *.CR2
+   time nice parallel --citation -j $nprocs ufraw-batch --out-type=jpg --exposure=$exposure ::: *.CR2
 else
    time nice ufraw-batch --out-type=jpg --exposure=$exposure *.CR2
 fi

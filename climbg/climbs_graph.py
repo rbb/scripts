@@ -7,6 +7,8 @@ import platform
 import math
 from climbs_lookup import *
 import urllib2
+from distutils.version import LooseVersion, StrictVersion
+
 #import ftplib
 
 #%matplotlib
@@ -38,6 +40,29 @@ df_climbs = xl.parse(sheetname)
 df_lut = xl.parse('Lookup_Tables')
 
 df_injuries = xl.parse('Injuries')
+
+
+#-----------------------------------------------
+def rolling_mean (x,n):
+#-----------------------------------------------
+    
+    if LooseVersion(pd.__version__) < LooseVersion('0.22.0'):
+        y = pd.rolling_mean(x, n)
+    else:
+        y = x.rolling(n).mean()
+    return y
+#-----------------------------------------------
+def ewma (x,span):
+#-----------------------------------------------
+    
+    if LooseVersion(pd.__version__) < LooseVersion('0.22.0'):
+        print "ver < 0.18.0"
+        y = pd.ewma(x, span=span)
+    else:
+        print "ver > 0.18.0"
+        y = x.ewm(span=span).mean()
+    return y
+
 
 #df= pd.read_excel(filename, sheetname)
 
@@ -176,11 +201,12 @@ def get_fill_ewma(s_in, alpha = 0.4, N_window = 50):
 
 
     #--- Rolling mean
-    s_rm = (pd.rolling_mean(s_in, N_window) / 1) / s_fill_no_zero_norm.mean()
+    s_rm = (rolling_mean(s_in, N_window) / 1) / s_fill_no_zero_norm.mean()
     s_rm_n = norm(s_rm)
 
     #--- EWMA
-    s_ewma = pd.ewma(s_in, span=N_window) 
+    s_ewma = ewma(s_in, span=N_window) 
+    print 'type(s_ewma) = ' +str(type(s_ewma))
     for n in range(3,0,-1):
         # Since the first few values are artificially high, lets replace them.
         s_ewma[n-1] = s_ewma[n]
@@ -380,7 +406,7 @@ N_window=5
 if getattr(s_count, "rolling", None):
     s_rm_count = s_count.rolling(window=N_window,center=False).mean()
 else:
-    s_rm_count = pd.rolling_mean(s_count, N_window)  
+    s_rm_count = rolling_mean(s_count, N_window)  
 h7= s_rm_count.plot(style='g-', ax=ax3, legend=False)
 
 plot_inuries( df_injuries, s_count.max(), ax3)
@@ -542,7 +568,7 @@ df_90p_avg_sent['Date'] = df_90p_avg_sent.index
 df_90p_avg_sent['p_div_mean'] = pd.Series(s_90p_sent / s_mean, index=df_90p_avg_sent.index)
 df_90p_avg_sent['p_div_median'] = pd.Series(s_90p_sent / s_median, index=df_90p_avg_sent.index)
 df_90p_avg_sent['p_div_count'] = pd.Series(s_90p_sent / s_count, index=df_90p_avg_sent.index)
-df_90p_avg_sent['roll_p'] = pd.rolling_mean(s_90p_sent, 10)
+df_90p_avg_sent['roll_p'] = rolling_mean(s_90p_sent, 10)
 df_90p_avg_sent['roll_p_div_mean'] = pd.Series(df_90p_avg_sent['roll_p'] / s_mean, index=df_90p_avg_sent.index)
 
 df_90p_avg_all = pd.DataFrame(s_90p_all)

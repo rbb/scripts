@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# This is a template or skeleton for starting a new python script
+
 import argparse
 #import syslog
 #import sys, os

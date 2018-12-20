@@ -14,6 +14,9 @@ if [ -d "/home/data_ext/home_russell_backup" ]; then
    if [ ! -f "$HOME/fslinks.txt" ]; then
       cp -ap /home/data_ext/home_russell_backup/fslinks.txt "$HOME" 
    fi
+   if [ ! -f "$HOME/installed.txt" ]; then
+      cp -ap /home/data_ext/home_russell_backup/installed.txt "$HOME" 
+   fi
 fi
 
 

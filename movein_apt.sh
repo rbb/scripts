@@ -16,7 +16,8 @@ package_list=( adduser samba openssh-server vim vim-gtk3 inkscape) #smbfs
 package_list+=(synaptic aptitude)
 package_list+=(kdiff3 ascii cups-pdf minicom screen)
 package_list+=(xclip xdotool pv)
-package_list+=(darkroom ffmpeg)
+package_list+=(ffmpeg gthumb) # darkroom graphviz 
+package_list+=(htop) # darkroom 
 #package_list+=(xdemineur xfonts-mathml wmctrl)
 
 # Some development utilities
@@ -24,13 +25,12 @@ package_list+=(automake autoconf build-essential expect cscope git)
 package_list+=(ddd nemiver repo)   # dconf-editor remake 
 #package_list+=(cmake expect cscope rabbitvcs-nautilus xxgdb ddd)
 #package_list+=(julia)
-package_list+=(g++ gcc gccxml)
+package_list+=(g++ gcc ) #gccxml
 package_list+=(git gitk)
-   graphviz grive gthumb htop wireshark\
-   markdown mkusb nmap 
+#   grive mkusb 
 
 # PYTHON!
-package_list+=(python ipython winpdb pylint ipython-notebook)
+package_list+=(python ipython winpdb pylint python-notebook)
 package_list+=(python-numpy python-pandas python-matplotlib python-pip python-virtualenv)
 #package_list+=(python-aafigure python-bs4 python-colorama)
 #package_list+=(python-dev python-distlib)
@@ -47,11 +47,13 @@ package_list+=(octave-signal octave-sockets octave-specfun octave-statistics oct
 
 # Install Latex and utilities
 package_list+=(texlive texlive-science-doc texlive-pictures-doc texlive-fonts-recommended lyx)
-package_list+=(pandoc pdfsam rst2pdf)
+package_list+=(pandoc pdfsam rst2pdf) # markdown 
 
 # some some Networking utilities
 package_list+=(iperf curl wget ethtool mtr-tiny filezilla fping net-tools wireshark)
 package_list+=(sshfs rdesktop)
+package_list+=(chromium-browser firefox)
+# nmap 
 
 
 #   roxterm-gtk3 seahorse setserial siril \

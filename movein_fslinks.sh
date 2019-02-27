@@ -55,48 +55,46 @@ mvl_home_target () {
 
 #Created by backext.sh. This is a list of symbolic links in the src directory
 #lrwxrwxrwx 1 russell russell 15 Sep 18  2017 ./.bashrc -> Dropbox/.bashrc*
-if [ -e "$HOME/fslinks.txt" ]; then
-   while read line; do
-      #echo $line
-      src=$(echo $line | grep -v "Created by backext.sh" | cut -d ' ' -f 11)
-      dst=$(echo $line | grep -v "Created by backext.sh" | cut -d ' ' -f 9)
-
-      if [ ! -z $src ]; then
-         base=$(basename $dst)
-         src=$(realpath -s $src)
-         dst=$(realpath -s $dst)
-         #echo "src = $src"
-         #echo "dst = $dst"
-         #echo "base = $base"
-
-         mv_home_target "$base"
-
-         #echo "src and dst not empty"
-         if [ ! -e "$dst" ]; then
-            echo "Creating link $src -> $dst"
-            ln -s "$src" "$dst"
-         else
-            echo "$dst exists"
-         fi
-      fi
-      echo "------"
-   done < "$HOME/fslinks.txt"
-else
-   # Vim setup
+if [ ! -e "$HOME/fslinks.txt" ]; then
    if [ -d "$HOME/Dropbox" ]; then
-      if [ -e "$HOME/.vimrc" ]; then
-         mv "$HOME/.vimrc" "$HOME/.vimrc_movein_fslinks.bak"
-      fi
-      ln -s "$HOME/Dropbox/_vimrc" "$HOME/.vimrc"
-
-      if [ -e "$HOME/.gvimrc" ]; then
-         mv "$HOME/.gvimrc" "$HOME/.gvimrc_movein_fslinks.bak"
-      fi
-      ln -s "$HOME/Dropbox/_gvimrc" "$HOME/.gvimrc"
-
-      if [ -e "$HOME/.vim" ]; then
-         mv "$HOME/.vim" "$HOME/.vim_movein_fslinks.bak"
-      fi
-      ln -s "$HOME/Dropbox/vimfiles" "$HOME/.vim"
+      # Create a minimal set of links
+      echo "lrwxrwxrwx 1 russell russell 29 May  7  2018 ./.bashrc -> $HOME/Dropbox/.bashrc" >> fslinks.txt
+      echo "lrwxrwxrwx 1 russell russell 18 May  7  2018 ./bin -> $HOME/Dropbox/home-bin/" >> fslinks.txt
+      echo "lrwxrwxrwx 1 russell russell 15 May  7  2018 ./.gvimrc -> $HOME/Dropbox/_gvimrc" >> fslinks.txt
+      echo "lrwxrwxrwx 1 russell russell 18 May  7  2018 ./.vim -> $HOME/Dropbox/vimfiles/" >> fslinks.txt
+      echo "lrwxrwxrwx 1 russell russell 14 May  7  2018 ./.vimrc -> $HOME/Dropbox/_vimrc" >> fslinks.txt
    fi
 fi
+
+while read line; do
+   #echo $line
+   src=$(echo $line | grep -v "Created by backext.sh" | awk '{ print $11 }')
+   dst=$(echo $line | grep -v "Created by backext.sh" | awk '{ print $9 }')
+   
+
+   if [ ! -z $src ]; then
+      #echo "src = $src"
+      src=${src/\/\/\///}
+      src=${src/\*/}
+      dst=${src/\/\/\///}
+      dst=${src/\*/}
+      #echo "src = $src"
+      base=$(basename $dst)
+      src=$(realpath -s $src)
+      dst=$(realpath -s $dst)
+      echo "src = $src"
+      echo "dst = $dst"
+      echo "base = $base"
+
+      mv_home_target "$base"
+
+      #echo "src and dst not empty"
+      if [ ! -e "$dst" ]; then
+         echo "Creating link $src -> $dst"
+         ln -s "$src" "$dst"
+      else
+         echo "$dst exists"
+      fi
+   fi
+   echo "------"
+done < "$HOME/fslinks.txt"

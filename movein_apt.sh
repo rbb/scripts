@@ -71,5 +71,9 @@ package_list+=(chromium-browser firefox)
 echo "Installing packages: ${package_list[@]}"
 sudo apt install ${package_list[@]}      
 
-sudo add-apt-repository ppa:alessandro-strada/ppa
-sudo apt install google-drive-ocamlfuse
+if [ ! -e "/etc/apt/sources.list.d/alessandro-strada-ubuntu-ppa-bionic.list" ]; then
+   sudo add-apt-repository ppa:alessandro-strada/ppa
+fi
+if ! command -v google-drive-ocamlfuse &>/dev/null; then 
+   sudo apt install google-drive-ocamlfuse
+fi

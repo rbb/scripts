@@ -1,10 +1,18 @@
 #!/bin/bash
 
-usage() { echo "Usage: $0 [-s src] [-d dest] [-n] [-h]" 1>&2; exit 1; }
+source movein_conf.sh
+usage() {
+   echo "Usage: $0 [-s src [-d dest] [-n] [-v] [-h]"
+   echo "   -s src   default = $src"
+   echo "   -d dest  default = $dst"
+   echo "   -n       dry run"
+   echo "   -v       verbose"
+   echo "   -h       print this help message"
+   exit 1
+}
 
 src="$HOME"
-dst=$(realpath "/home/data_ext/$HOME")
-#dryrun=-n
+dst="$movein_home_src"
 
 dryrun=""
 verbose=""
@@ -33,16 +41,18 @@ shift $((OPTIND-1))
 echo "Created by backext.sh. This is a list of symbolic links in the src directory" > $src/fslinks.txt
 # Note that in this call to find, we use an absolute path name, so that creating
 # symbolic links will work when parsing the fslinks.txt file
-find "$src" -maxdepth 1  -type l  -exec ls -alFh {} + 2>&1 | grep -v "Permission denied" >> $src/fslinks.txt
-if [ ! -z $verbose ]; then
-   echo "fslinks.txt created"
-fi
+if [ -z $dryrun ]; then
+   find "$src" -maxdepth 1  -type l  -exec ls -alFh {} + 2>&1 | grep -v "Permission denied" >> $src/fslinks.txt
+   if [ ! -z $verbose ]; then
+      echo "fslinks.txt created"
+   fi
 
-echo "Created by backext.sh. This is a list of installed apps." > $src/installed.txt
-echo "Created by 'apt list --installed'" >> $src/installed.txt
-apt list --installed 2>&1 |grep -v "stable CLI interface" >> $src/installed.txt
-if [ ! -z $verbose ]; then
-   echo "installed.txt created"
+   echo "Created by backext.sh. This is a list of installed apps." > $src/installed.txt
+   echo "Created by 'apt list --installed'" >> $src/installed.txt
+   apt list --installed 2>&1 |grep -v "stable CLI interface" >> $src/installed.txt
+   if [ ! -z $verbose ]; then
+      echo "installed.txt created"
+   fi
 fi
 
 #function filterstr() {

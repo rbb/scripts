@@ -6,16 +6,17 @@
 # !!!!!!!!!!!!!!!!! THIS SCRIPT IS NOT TESTED !!!!!!!!!!!!!!!!!!
 # This is just a starter, for next time. - RBB 2013-10-11
 
+source movein_conf.sh
 
 
 if [ -d "/home/data_ext/home/russell" ]; then
    if [ ! -f "$HOME/fslinks.txt" ]; then
       echo "Copying fslinks.txt"
-      cp -ap /home/data_ext/home/russell/fslinks.txt "$HOME" 
+      cp -ap "$movein_home_src/fslinks.txt" "$HOME"
    fi
    if [ ! -f "$HOME/installed.txt" ]; then
       echo "Copying installed.txt"
-      cp -ap /home/data_ext/home/russell/installed.txt "$HOME" 
+      cp -ap "$movein_home_src/installed.txt" "$HOME"
    fi
 fi
 

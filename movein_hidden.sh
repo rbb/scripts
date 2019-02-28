@@ -7,16 +7,19 @@
 
 # !!!!!!!!!!!!!!!!! THIS SCRIPT IS NOT TESTED !!!!!!!!!!!!!!!!!!
 # This is just a starter, for next time. - RBB 2013-10-11
+source movein_conf.sh
+
+src="$movein_home_src"
 
 cp_home_target () {
    name=$1
-   if [ ! -e "$home/$name" ]; then
-         cp -apr "/home/data_ext/home_russell_backup/$name" "$HOME/"
+   if [ ! -e "$HOME/$name" ]; then
+      cp -apr "$src/$name" "$HOME/"
    fi
 }
 
 
-if [ -d "/home/data_ext/home_russell_backup" ]; then
+if [ -d "$src" ]; then
    cp_home_target ".ssh"
    cp_home_target ".gitconfig"
    cp_home_target ".bash_history"

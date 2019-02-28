@@ -11,9 +11,12 @@ src="$movein_home_src"
 dst="$HOME"
 
 usage() {
-   echo "Usage: $0 [-s src [-d dest] [-n] [-h]"
-   echo "   default src: $src"
-   echo "   default dest: $dst"
+   echo "Usage: $0 [-s src [-d dest] [-n] [-v] [-h]"
+   echo "   -s src   default = $src"
+   echo "   -d dest  default = $dst"
+   echo "   -n       dry run"
+   echo "   -v       verbose"
+   echo "   -h       print this help message"
    exit 1
 }
 

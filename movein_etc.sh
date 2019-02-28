@@ -1,12 +1,11 @@
 #!/bin/bash
 
 # This is a script to assist with setting up a new Linux computer, at FCI. It 
-# attempts to install a bunch of packages, setup networking, setup ssh, and
-# copy some config files from a base user's home directory on a remote 
-# host/server.
+# attempts to copy some files from a backup to the /etc directory
 
-# !!!!!!!!!!!!!!!!! THIS SCRIPT IS NOT TESTED !!!!!!!!!!!!!!!!!!
-# This is just a starter, for next time. - RBB 2013-10-11
+# !!!!!!!!!!!!!!!!! This Script only has minimal testing!!!!!!!!!!!!!!!!!!
+# This is a starter, for next time. - RBB 2019-02-28
+src_dir="/home/data_ext/etc_backup"
 
 cp_etc_target () {
    name=$1

@@ -23,6 +23,7 @@ cp_etc_target () {
 if [ -d "$src_dir" ]; then
    cp_etc_target "fstab"
    cp_etc_target "hosts"
-   cp_etc_target "network/interfaces"
+   cp_etc_target "netplan/01-network-manager-all.yaml"
+   #cp_etc_target "network/interfaces"
 fi
 

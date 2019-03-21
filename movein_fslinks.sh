@@ -1,18 +1,22 @@
 #!/bin/bash
 
-# This is a script to assist with setting up a new Linux computer, at FCI. It 
-# attempts to install a bunch of packages, setup networking, setup ssh, and
-# copy some config files from a base user's home directory on a remote 
-# host/server.
+# This is a script to assist with setting up a new Linux computer by setting up
+# some symbolic links
 
 # !!!!!!!!!!!!!!!!! THIS SCRIPT IS NOT TESTED !!!!!!!!!!!!!!!!!!
 # This is just a starter, for next time. - RBB 2013-10-11
 
+source movein_conf.sh
 
 
-if [ -d "/home/data_ext/home_russell_backup" ]; then
+if [ -d "/home/data_ext/home/russell" ]; then
    if [ ! -f "$HOME/fslinks.txt" ]; then
-      cp -ap /home/data_ext/home_russell_backup/fslinks.txt "$HOME" 
+      echo "Copying fslinks.txt"
+      cp -ap "$movein_home_src/fslinks.txt" "$HOME"
+   fi
+   if [ ! -f "$HOME/installed.txt" ]; then
+      echo "Copying installed.txt"
+      cp -ap "$movein_home_src/installed.txt" "$HOME"
    fi
 fi
 
@@ -52,18 +56,36 @@ mvl_home_target () {
 
 #Created by backext.sh. This is a list of symbolic links in the src directory
 #lrwxrwxrwx 1 russell russell 15 Sep 18  2017 ./.bashrc -> Dropbox/.bashrc*
+if [ ! -e "$HOME/fslinks.txt" ]; then
+   if [ -d "$HOME/Dropbox" ]; then
+      # Create a minimal set of links
+      echo "lrwxrwxrwx 1 russell russell 29 May  7  2018 ./.bashrc -> $HOME/Dropbox/.bashrc" >> fslinks.txt
+      echo "lrwxrwxrwx 1 russell russell 18 May  7  2018 ./bin -> $HOME/Dropbox/home-bin/" >> fslinks.txt
+      echo "lrwxrwxrwx 1 russell russell 15 May  7  2018 ./.gvimrc -> $HOME/Dropbox/_gvimrc" >> fslinks.txt
+      echo "lrwxrwxrwx 1 russell russell 18 May  7  2018 ./.vim -> $HOME/Dropbox/vimfiles/" >> fslinks.txt
+      echo "lrwxrwxrwx 1 russell russell 14 May  7  2018 ./.vimrc -> $HOME/Dropbox/_vimrc" >> fslinks.txt
+   fi
+fi
+
 while read line; do
    #echo $line
-   src=$(echo $line | grep -v "Created by backext.sh" | cut -d ' ' -f 11)
-   dst=$(echo $line | grep -v "Created by backext.sh" | cut -d ' ' -f 9)
+   src=$(echo $line | grep -v "Created by backext.sh" | awk '{ print $11 }')
+   dst=$(echo $line | grep -v "Created by backext.sh" | awk '{ print $9 }')
+   
 
    if [ ! -z $src ]; then
+      #echo "src = $src"
+      src=${src/\/\/\///}
+      src=${src/\*/}
+      dst=${src/\/\/\///}
+      dst=${src/\*/}
+      #echo "src = $src"
       base=$(basename $dst)
       src=$(realpath -s $src)
       dst=$(realpath -s $dst)
-      #echo "src = $src"
-      #echo "dst = $dst"
-      #echo "base = $base"
+      echo "src = $src"
+      echo "dst = $dst"
+      echo "base = $base"
 
       mv_home_target "$base"
 

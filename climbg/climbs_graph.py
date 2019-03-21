@@ -6,7 +6,7 @@ import sys
 import platform
 import math
 from climbs_lookup import *
-import urllib2
+#import urllib2
 from distutils.version import LooseVersion, StrictVersion
 
 #import ftplib
@@ -56,10 +56,10 @@ def ewma (x,span):
 #-----------------------------------------------
     
     if LooseVersion(pd.__version__) < LooseVersion('0.22.0'):
-        print "ver < 0.18.0"
+        print("ver < 0.18.0")
         y = pd.ewma(x, span=span)
     else:
-        print "ver > 0.18.0"
+        print("ver > 0.18.0")
         y = x.ewm(span=span).mean()
     return y
 
@@ -206,7 +206,7 @@ def get_fill_ewma(s_in, alpha = 0.4, N_window = 50):
 
     #--- EWMA
     s_ewma = ewma(s_in, span=N_window) 
-    print 'type(s_ewma) = ' +str(type(s_ewma))
+    print('type(s_ewma) = ' +str(type(s_ewma)))
     for n in range(3,0,-1):
         # Since the first few values are artificially high, lets replace them.
         s_ewma[n-1] = s_ewma[n]
